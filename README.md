@@ -5,6 +5,8 @@ idea使用terminal操作git使用的命令为linux命令
 
 add：git add .
 
-commit：git commit (描述信息)-m "描述"
+commit：git commit (描述信息)-m "描述"   必写描述
 
 commit追加少量代码,不修改版本：git commit --amend --no-edit
+
+git status:查看当前代码修改状态
