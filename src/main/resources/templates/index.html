@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>City Blog</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--自己写的css放他后面-->
+    <!--格式话代码ctrl+alt+l-->
+</head>
+<body>
+<nav class="navbar navbar-inverse" style="border-radius: 0px">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="image/logo.jpg" class="img-responsive img-thumbnail" style="height: 48px;width: 48px;margin-left: 30px">
+            <a class="navbar-brand" href="/toIndex">City Blog</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left" style="margin-left: 100px;" action="#" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="找社区文章、答案、技术大拿" style="font-size: 12px;width: 200px;">
+                </div>
+                <button type="submit" class="btn btn-default" style="margin-left: 25px;">寻找</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">我<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">我的消息</a></li>
+                        <li><a href="#">个人资料</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!--页面渲染之后再加载js-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!--bootstrap依赖jq必须在jq引入后引入bootstrap.min.js-->
+<script src="js/bootstrap.min.js"></script>
+<!--自己写的jq代码放他两后面-->
+</body>
+</html>
