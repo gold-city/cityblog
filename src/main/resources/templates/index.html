@@ -8,6 +8,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--自己写的css放他后面-->
     <!--格式话代码ctrl+alt+l-->
+
+    <!--页面渲染之后再加载js-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!--bootstrap依赖jq必须在jq引入后引入bootstrap.min.js-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--自己写的jq代码放他两后面-->
 </head>
 <body>
 <nav class="navbar navbar-inverse" style="border-radius: 0px">
@@ -21,7 +27,7 @@
                 <span class="icon-bar"></span>
             </button>
             <img src="image/logo.jpg" class="img-responsive img-thumbnail" style="height: 48px;width: 48px;margin-left: 30px">
-            <a class="navbar-brand" href="/toIndex">City Blog</a>
+            <a class="navbar-brand" href="/">City Blog</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-left" style="margin-left: 100px;" action="#" method="post">
@@ -31,7 +37,7 @@
                 <button type="submit" class="btn btn-default" style="margin-left: 25px;">寻找</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/login/oauth/authorize?client_id=Iv1.748403fd8664429f&redirect_uri=http://localhost/callback&scope=user&state=1">登录</a></li>
+                <li><a href="https://github.com/login/oauth/authorize?client_id=853b30b562f5685f5390&redirect_uri=http://localhost/callback&scope=user&state=1">登录</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">我<span class="caret"></span></a>
@@ -46,12 +52,5 @@
         </div>
     </div>
 </nav>
-
-
-<!--页面渲染之后再加载js-->
-<script src="js/jquery-3.3.1.min.js"></script>
-<!--bootstrap依赖jq必须在jq引入后引入bootstrap.min.js-->
-<script src="js/bootstrap.min.js"></script>
-<!--自己写的jq代码放他两后面-->
 </body>
 </html>

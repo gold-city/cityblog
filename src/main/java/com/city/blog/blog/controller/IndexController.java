@@ -16,9 +16,4 @@ public class IndexController {
     public String index(){
         return "index";
     }
-
-    @RequestMapping(value = "/toIndex")
-    public String toIndex(){
-        return "index";
-    }
 }
