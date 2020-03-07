@@ -15,6 +15,8 @@ import java.io.IOException;
  * Date: 2020/3/4
  * Time: 15:12
  * Description: No Description
+ *
+ * 使用nohttpjava内访问地址拿到返回的数据
  */
 @Component
 public class GithubProvider {

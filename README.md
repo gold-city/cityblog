@@ -10,3 +10,5 @@ commit：git commit (描述信息)-m "描述"   必写描述
 commit追加少量代码,不修改版本：git commit --amend --no-edit
 
 git status:查看当前代码修改状态
+
+idea查看单个class在git中的历史版本右击查看的class  ->git  -> show history
