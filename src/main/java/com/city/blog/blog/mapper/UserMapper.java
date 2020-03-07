@@ -3,6 +3,8 @@ package com.city.blog.blog.mapper;
 import com.city.blog.blog.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,5 +16,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
     @Insert("insert into user (account_id,name,token,gmt_create,gmt_modified) values (#{accountId},#{name},#{token},#{gmtCreate},#{gmtModified})")
-    void insert(User user);
+    void insert(User user);//sql语句中需要的值自动再类中找
+
+    @Select("select * from user where token=#{userToken}")
+    User queryUserByToken(@Param("userToken") String userToken);//不是类则自己获取
 }
