@@ -1,0 +1,2 @@
+数据库sql管理工具，在V1__Create_person_table.sql中写入sql脚本，运行  mvn flyway:migrate则可以运行脚本创建数据库，跟git一样，对sql语句进行跟新和
+同步  只同步表，不同步数据库，导入时先创建数据库，通过配置文件知道h2的数据库位置和名字

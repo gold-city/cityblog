@@ -17,3 +17,6 @@ github push的时候，远程仓库和本地不一致，导致拒绝提交时解
     1、git pull 把远端拉回本地
     2、esc键退出然后:x退出当前pull状态
     3、继续push
+    
+删除blogdata下的数据库表 rm ~/blogdata.*      windows需要将idea的terminal的运行方式改为git的git-bash才可以运行
+执行db->migration下的sql脚本    mvn flyway:migrate
