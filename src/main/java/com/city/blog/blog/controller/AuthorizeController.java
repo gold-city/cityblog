@@ -8,7 +8,7 @@ import com.city.blog.blog.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
@@ -43,7 +43,7 @@ public class AuthorizeController {
 
     @Autowired
     private UserMapper userMapper;
-    @RequestMapping(value = "/callback")
+    @GetMapping(value = "/callback")
     public String callback(@RequestParam(name = "code") String code, @RequestParam(name = "state") String state,
                            HttpServletRequest request, HttpServletResponse response){
         //点击登录，跳到github项目id携带参数，访问返回项目服务器地址接收code，进行验证，验证完再跳到github获取个人信息，然后返回，然后项目获取用户名

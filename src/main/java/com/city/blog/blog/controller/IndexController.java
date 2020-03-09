@@ -4,7 +4,7 @@ import com.city.blog.blog.mapper.UserMapper;
 import com.city.blog.blog.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ public class IndexController {
     private UserMapper userMapper;
 
     //这里的逻辑相当于过滤器，如果没有登录不能通过该接口跳转首页，重新验证查询是否存在用户还可以解决重启服务器刷新页面登录失效问题
-    @RequestMapping("/")//设置首页
+    @GetMapping("/")//设置首页
     public String index(HttpServletRequest request){
         //插入数据库后，自定义token的cookie跳转到这里进行去到首页，插完之后再查才能通过登录，
         // 在这里通过token去数据库查user为空则不登陆（减少可能插入失败的可能），不为空则登录

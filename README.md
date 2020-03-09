@@ -1,5 +1,8 @@
 ##项目的自述文件，用于存储项目的自述，github上会在项目下面显示该文件文本内容
 
+##idea快捷键
+    ctrl+tab切换idea最新使用的两个文件
+
 ##资料
 idea使用terminal操作git使用的命令为linux命令
 
