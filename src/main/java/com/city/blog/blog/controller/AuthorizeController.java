@@ -58,7 +58,7 @@ public class AuthorizeController {
         GitHubUser user = githubProvider.getUser(accessTokenDTO1);
         //user.notnull
         //判断状态，空则登录失败，有则登录成功
-        if (user != null) {
+        if (user != null&& user.getId() != null) {
             //插入数据库
             User user1 = new User();
             String token = UUID.randomUUID().toString();
@@ -67,9 +67,10 @@ public class AuthorizeController {
             //UUID.randomUUID().toString()是javaJDK提供的一个自动生成主键的方法。UUID(Universally Unique Identifier)
             // 全局唯一标识符,是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的，是由一个十六位的数字组成,表现出来的 形式。
             user1.setName(user.getName());
-            user1.setAccountId(String.valueOf(user.getId()));
-            user1.setGmtCreate(System.currentTimeMillis());//用户建入数据库的时间
-            user1.setGmtModified(user1.getGmtCreate());//用户修改用户信息的时间
+            user1.setAvatar_url(user.getAvatar_url());
+            user1.setAccount_id(String.valueOf(user.getId()));
+            user1.setGmt_create(System.currentTimeMillis());//用户建入数据库的时间
+            user1.setGmt_modified(user1.getGmt_create());//用户修改用户信息的时间
             userMapper.insert(user1);
 
             //放入session，spring为session自动集成了自动的cookie；

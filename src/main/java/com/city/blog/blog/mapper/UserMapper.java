@@ -15,7 +15,7 @@ import org.apache.ibatis.annotations.Select;
  */
 @Mapper
 public interface UserMapper {
-    @Insert("insert into user (account_id,name,token,gmt_create,gmt_modified) values (#{accountId},#{name},#{token},#{gmtCreate},#{gmtModified})")
+    @Insert("insert into user (account_id,name,token,gmt_create,gmt_modified,avatar_url) values (#{account_id},#{name},#{token},#{gmt_create},#{gmt_modified},#{avatar_url})")
     void insert(User user);//sql语句中需要的值自动再类中找
 
     @Select("select * from user where token=#{userToken}")

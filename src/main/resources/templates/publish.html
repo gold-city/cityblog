@@ -7,7 +7,7 @@
     <title>City Blog - 发布</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .reset{
+        .reset {
             position: absolute;
             right: 15px;
             bottom: 10px;
@@ -44,6 +44,7 @@
                 <li th:if="${session.user}==null"><a
                         href="https://github.com/login/oauth/authorize?client_id=853b30b562f5685f5390&redirect_uri=http://localhost/callback&scope=user&state=1"
                         style="color: #f5f6fa">登录</a></li>
+                <li><img width="40px" height="40px" style="margin-left: 18px;margin-top: 5px" th:if="${session.user.getAvatar_url()}!=null" th:src="${session.user.getAvatar_url()}"/></li>
                 <li class="dropdown" th:if="${session.user}!=null">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-expanded="false" style="color: #f5f6fa;background-color: #373d41"><span
@@ -67,21 +68,29 @@
             <form action="/publish" method="post">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要):</label>
-                    <input type="email" class="form-control" name="title" id="title" placeholder="问题标题..">
+                    <input type="text" th:value="${title}" class="form-control" name="title" id="title" placeholder="问题标题..">
                 </div>
                 <div class="form-group">
                     <label for="description">问题补充(必填，请参照右侧提醒):</label>
                     <div style="position: relative;">
-                        <textarea class="form-control" name="description" id="description" placeholder="请输入你的问题..." rows="15" style="resize: none;"></textarea>
+                        <textarea class="form-control" th:text="${description}" name="description" id="description" placeholder="请输入你的问题..."
+                                  rows="15" style="resize: none;"></textarea>
                         <div class="reset"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="tag">添加标签:</label>
-                    <input type="email" class="form-control" name="tag" id="tag" placeholder="输入标签以，隔开">
+                    <input type="text" th:value="${tag}" class="form-control" name="tag" id="tag" placeholder="输入标签以，隔开">
                 </div>
-                <div style="width: 100%">
-                    <button type="submit" class="btn btn-success" style="margin-left: 93.5%;">发布</button>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 alert alert-danger" th:if="${error!=null}"
+                             th:text="${error}" role="alert"></div>
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" th:if="${error==null}"></div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+                            <button type="submit" class="btn btn-success" style="margin-left: 50%;margin-top: 7px">发布</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

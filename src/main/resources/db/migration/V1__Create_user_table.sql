@@ -6,5 +6,6 @@ create table user
     token varchar(36),
     gmt_create bigint,
     gmt_modified bigint,
-    bio varchar (255)
+    bio varchar (255),
+    avatar_url varchar(100)
 );
