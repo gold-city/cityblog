@@ -1,13 +1,17 @@
 package com.city.blog.blog.controller;
 
+import com.city.blog.blog.dto.QuestionDTO;
 import com.city.blog.blog.mapper.UserMapper;
 import com.city.blog.blog.model.User;
+import com.city.blog.blog.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,9 +26,12 @@ public class IndexController {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private QuestionService questionService;
+
     //这里的逻辑相当于过滤器，如果没有登录不能通过该接口跳转首页，重新验证查询是否存在用户还可以解决重启服务器刷新页面登录失效问题
     @GetMapping("/")//设置首页
-    public String index(HttpServletRequest request) {
+    public String index(HttpServletRequest request, Map<String,Object> map) {
         //插入数据库后，自定义token的cookie跳转到这里进行去到首页，插完之后再查才能通过登录，
         // 在这里通过token去数据库查user为空则不登陆（减少可能插入失败的可能），不为空则登录
         //插入的时候把token放入了cookie中，通过response放token通过request拿
@@ -41,6 +48,10 @@ public class IndexController {
                     break;
                 }
             }
+
+            //获取所有发布数据,其数据种包括user的信息，所以使用service进行数据组合，包装成dto对象返回
+            List<QuestionDTO> questions = questionService.questionList();
+            map.put("questions",questions);
             return "index";
         }else {
             return "index";

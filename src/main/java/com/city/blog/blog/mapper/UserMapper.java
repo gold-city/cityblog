@@ -20,4 +20,7 @@ public interface UserMapper {
 
     @Select("select * from user where token=#{userToken}")
     User queryUserByToken(@Param("userToken") String userToken);//不是类则自己获取
+
+    @Select("select * from user where id=#{creator}")
+    User queryUserById(@Param("creator") Integer creator);
 }
