@@ -84,6 +84,19 @@
             <version>1.1.1</version>
         </dependency>
 
+        <!--热部署插件,步骤：
+        1、jar
+        2、设置勾上Build project automatically
+        3、三件加/ 弹出idea隐藏设置 修改三个c.d.s.t.delay=100 c.a.t.d=100 c.a.a.w.a.r勾上
+        4、启动器配置-Update classes and resources
+        5、修改后台代码后100毫秒自动重启，不用测试的话不要一直开着，耗性能
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 
