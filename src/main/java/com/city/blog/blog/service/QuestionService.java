@@ -63,4 +63,33 @@ public class QuestionService {
         }
         return paginationDTO;
     }
+
+    public PaginationDTO questionByUserIdList(Integer userId,Integer page, Integer size) {
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer count = questionMapper.countById(userId);
+        paginationDTO.setPagination(count, page, size);
+
+        if (page < 1) {
+            page = 1;
+        }
+        if (page > paginationDTO.getTotalPage()) {
+            page = paginationDTO.getTotalPage();
+        }
+        //（i-1）*5
+        Integer offset = (page - 1) * size;
+        List<Question> questions = questionMapper.questionByList(userId,offset, size);
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+        paginationDTO.setQuestions(questionDTOList);
+        //获取页面总数
+        for (Question question : questions) {
+            User user = userMapper.queryUserById(question.getCreator());
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(question, questionDTO);
+            questionDTO.setUser(user);
+            questionDTOList.add(questionDTO);
+        }
+        return paginationDTO;
+    }
+
+
 }

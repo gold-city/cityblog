@@ -1,7 +1,6 @@
 package com.city.blog.blog.controller;
 
 import com.city.blog.blog.mapper.QuestionMapper;
-import com.city.blog.blog.mapper.UserMapper;
 import com.city.blog.blog.model.Question;
 import com.city.blog.blog.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
@@ -26,13 +24,10 @@ public class PublishController {
     @Autowired
     private QuestionMapper questionMapper;
 
-    @Autowired
-    private UserMapper userMapper;
-
     @GetMapping("/publish")
-    public String publish(HttpServletRequest request,Map<String,String> map){
+    public String publish(HttpServletRequest request, Map<String, String> map) {
         //获取cookie种的token查询当前用户的id
-        Cookie[] cookies = request.getCookies();
+        /*Cookie[] cookies = request.getCookies();
         User user = null;
         if (cookies != null&&cookies.length!=0) {
             for (Cookie cookie : cookies) {
@@ -48,14 +43,19 @@ public class PublishController {
                     break;
                 }
             }
+        }*/
+        User user = (User) request.getSession().getAttribute("user");
+        if (user != null) {
+            return "publish";
         }
+        map.put("error", "用户未登录！");
         return "publish";
     }
 
     @PostMapping("/publish")
-    public String publish(Question question, Map<String,String> map, HttpServletRequest request){//测试使用实体类接收参数
+    public String publish(Question question, Map<String, String> map, HttpServletRequest request) {//测试使用实体类接收参数
         //获取cookie种的token查询当前用户的id
-        Cookie[] cookies = request.getCookies();
+        /*Cookie[] cookies = request.getCookies();
         User user = null;
         if (cookies != null&&cookies.length!=0) {
             for (Cookie cookie : cookies) {
@@ -71,31 +71,39 @@ public class PublishController {
                     break;
                 }
             }
-        }
-        //发布失败，返回发布
-        map.put("tag",question.getTag());
-        map.put("description",question.getDescription());
-        map.put("title",question.getTitle());
-        //前端校验容易绕过，后端同时进行校验安全
-        if (question.getTitle()==""||question.getTitle()==null){
-            map.put("error","标题不能为空！");
-            return "publish";
-        }
-        if (question.getTag()==""||question.getTag()==null){
-            map.put("error","标签不能为空！");
-            return "publish";
-        }
-        if (question.getDescription()==""||question.getDescription()==null){
-            map.put("error","问题描述不能为空！");
-            return "publish";
-        }
+        }*/
 
-        //补全自动注入的属性值，然后插入
-        question.setGmt_create(System.currentTimeMillis());
-        question.setGmt_modified(question.getGmt_create());
-        question.setCreator(user.getId());
-        questionMapper.create(question);
-        //发布成功，跳回首页显示内容
-        return "redirect:/";
+        User user = (User) request.getSession().getAttribute("user");
+        if (user == null) {
+            map.put("error", "用户未登录！");
+            return "publish";
+        } else {
+
+            //发布失败，返回发布
+            map.put("tag", question.getTag());
+            map.put("description", question.getDescription());
+            map.put("title", question.getTitle());
+            //前端校验容易绕过，后端同时进行校验安全
+            if (question.getTitle() == "" || question.getTitle() == null) {
+                map.put("error", "标题不能为空！");
+                return "publish";
+            }
+            if (question.getTag() == "" || question.getTag() == null) {
+                map.put("error", "标签不能为空！");
+                return "publish";
+            }
+            if (question.getDescription() == "" || question.getDescription() == null) {
+                map.put("error", "问题描述不能为空！");
+                return "publish";
+            }
+
+            //补全自动注入的属性值，然后插入
+            question.setGmt_create(System.currentTimeMillis());
+            question.setGmt_modified(question.getGmt_create());
+            question.setCreator(user.getId());
+            questionMapper.create(question);
+            //发布成功，跳回首页显示内容
+            return "redirect:/";
+        }
     }
 }
