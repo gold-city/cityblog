@@ -1,10 +1,7 @@
 package com.city.blog.blog.mapper;
 
 import com.city.blog.blog.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,4 +20,10 @@ public interface UserMapper {
 
     @Select("select * from user where id=#{creator}")
     User queryUserById(@Param("creator") Integer creator);
+
+    @Select("select * from user where account_id = #{accountId}")
+    User queryUserByAccountId(@Param("accountId") String accountId);
+
+    @Update("update user set Gmt_modified=#{gmt_modified},Avatar_url=#{avatar_url},name=#{name},token=#{token} where id=#{id}")
+    void updateUser(User dbUser);
 }

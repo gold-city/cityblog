@@ -92,4 +92,12 @@ public class QuestionService {
     }
 
 
+    public QuestionDTO queryQuestionByQuestionId(Integer questionId) {
+        Question question = questionMapper.queryQuestionByQuestionId(questionId);
+        User user = userMapper.queryUserById(question.getCreator());
+        QuestionDTO questionDTO = new QuestionDTO();
+        questionDTO.setUser(user);
+        BeanUtils.copyProperties(question,questionDTO);
+        return questionDTO;
+    }
 }

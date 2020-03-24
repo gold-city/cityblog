@@ -2,9 +2,9 @@ package com.city.blog.blog.controller;
 
 import com.city.blog.blog.dto.AccessTokenDTO;
 import com.city.blog.blog.dto.GitHubUser;
-import com.city.blog.blog.mapper.UserMapper;
 import com.city.blog.blog.model.User;
 import com.city.blog.blog.provider.GithubProvider;
+import com.city.blog.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -42,7 +42,7 @@ public class AuthorizeController {
     private String redirectUri;
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
     @GetMapping(value = "/callback")
     public String callback(@RequestParam(name = "code") String code, @RequestParam(name = "state") String state,
                            HttpServletRequest request, HttpServletResponse response){
@@ -66,13 +66,11 @@ public class AuthorizeController {
             //token,标识，指令
             //UUID.randomUUID().toString()是javaJDK提供的一个自动生成主键的方法。UUID(Universally Unique Identifier)
             // 全局唯一标识符,是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的，是由一个十六位的数字组成,表现出来的 形式。
+            //使用token的思想可以为，数据库需要与github的个人信息同步，token变化的时候从新跟新本站的user数据库，达到同步个人信息
             user1.setName(user.getName());
             user1.setAvatar_url(user.getAvatar_url());
             user1.setAccount_id(String.valueOf(user.getId()));
-            user1.setGmt_create(System.currentTimeMillis());//用户建入数据库的时间
-            user1.setGmt_modified(user1.getGmt_create());//用户修改用户信息的时间
-            userMapper.insert(user1);
-
+            userService.updateUser(user1);
             //放入session，spring为session自动集成了自动的cookie；
             //request.getSession().setAttribute("user",user);
             //自定义session和cookie,使用指令标识符token进行绑定，前端判定token验证是否登录,以前逻辑是通过session中是否存在user（或name）对象
@@ -82,5 +80,14 @@ public class AuthorizeController {
         }else{
             return "redirect:/";
         }
+    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+        //退出，删除cookie和session，跳到index
+        request.getSession().removeAttribute("user");
+        Cookie token = new Cookie("token", null);//替换
+        token.setMaxAge(0);//设置最大时效为0，立即删除
+        response.addCookie(token);
+        return "redirect:/";
     }
 }

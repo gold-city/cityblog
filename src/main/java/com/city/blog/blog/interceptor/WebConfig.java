@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 //过滤器
 @Configuration
+//@EnableWebMvc---拦截静态资源
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
