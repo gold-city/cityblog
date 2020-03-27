@@ -26,8 +26,8 @@
                     th:text="${questionDTO.getTitle()}"></span></h2>
                 <div style="color: #636e72;margin-left: 10px">
                 作者：<span th:text="${questionDTO.user.getName()}"></span>
-                    &ensp;发布时间：<span th:text="${#dates.format(questionDTO.gmt_create,'yyyy-MM-dd HH:mm')}"></span>
-                    &ensp;阅读数：<span th:text="${questionDTO.view_count}"></span>
+                    &ensp;发布时间：<span th:text="${#dates.format(questionDTO.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
+                    &ensp;阅读数：<span th:text="${questionDTO.viewCount}"></span>
                 </div>
             </div>
             <div style="width: 100%; padding-bottom: 25px;margin-bottom: 20px; border-bottom: 1px solid #0f0f0f;">
@@ -44,7 +44,7 @@
                     <div class="media-left media-middle">
                         <a href="#">
                             <img style="width: 50px; height: 50px" class="img-rounded media-object"
-                                 th:src="${questionDTO.user.avatar_url}">
+                                 th:src="${questionDTO.user.avatarUrl}">
                         </a>
                     </div>
                     <div class="media-body">

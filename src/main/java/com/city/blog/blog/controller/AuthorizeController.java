@@ -49,10 +49,10 @@ public class AuthorizeController {
         //点击登录，跳到github项目id携带参数，访问返回项目服务器地址接收code，进行验证，验证完再跳到github获取个人信息，然后返回，然后项目获取用户名
         //通过okhttp在java后台进行访问url地址获取信息（okhttp是一个插件，有在后台访问网站的功能）
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
-        accessTokenDTO.setClient_id(clientId);
-        accessTokenDTO.setClient_secret(clientSecret);
+        accessTokenDTO.setClientId(clientId);
+        accessTokenDTO.setClientSecret(clientSecret);
         accessTokenDTO.setCode(code);
-        accessTokenDTO.setRedirect_uri(redirectUri);
+        accessTokenDTO.setRedirectUri(redirectUri);
         accessTokenDTO.setState(state);
         String accessTokenDTO1 = githubProvider.getAccessTokenDTO(accessTokenDTO);
         GitHubUser user = githubProvider.getUser(accessTokenDTO1);
@@ -68,7 +68,7 @@ public class AuthorizeController {
             // 全局唯一标识符,是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的，是由一个十六位的数字组成,表现出来的 形式。
             //使用token的思想可以为，数据库需要与github的个人信息同步，token变化的时候从新跟新本站的user数据库，达到同步个人信息
             user1.setName(user.getName());
-            user1.setAvatarUrl(user.getAvatar_url());
+            user1.setAvatarUrl(user.getAvatarUrl());
             user1.setAccountId(String.valueOf(user.getId()));
             userService.updateUser(user1);
             //放入session，spring为session自动集成了自动的cookie；

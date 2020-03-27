@@ -55,7 +55,7 @@ public class QuestionService {
         paginationDTO.setQuestions(questionDTOList);
         //获取页面总数
         for (Question question : questions) {
-            User user = userMapper.queryUserById(question.getCreator());
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question, questionDTO);
             questionDTO.setUser(user);
@@ -82,7 +82,7 @@ public class QuestionService {
         paginationDTO.setQuestions(questionDTOList);
         //获取页面总数
         for (Question question : questions) {
-            User user = userMapper.queryUserById(question.getCreator());
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question, questionDTO);
             questionDTO.setUser(user);
@@ -93,8 +93,8 @@ public class QuestionService {
 
 
     public QuestionDTO queryQuestionByQuestionId(Integer questionId) {
-        Question question = questionMapper.queryQuestionByQuestionId(questionId);
-        User user = userMapper.queryUserById(question.getCreator());
+        Question question = questionMapper.selectByPrimaryKey(questionId);
+        User user = userMapper.selectByPrimaryKey(question.getCreator());
         QuestionDTO questionDTO = new QuestionDTO();
         questionDTO.setUser(user);
         BeanUtils.copyProperties(question,questionDTO);
@@ -105,12 +105,12 @@ public class QuestionService {
     public void insertOrUpdate(Question question) {
         if (question.getId() != null) {
             //更新
-            question.setGmt_modified(System.currentTimeMillis());
+            question.setGmtModified(System.currentTimeMillis());
             questionMapper.upadte(question);
         }else {
             //插入
-            question.setGmt_create(System.currentTimeMillis());
-            question.setGmt_modified(question.getGmt_create());
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setGmtModified(question.getGmtCreate());
             questionMapper.create(question);
         }
     }

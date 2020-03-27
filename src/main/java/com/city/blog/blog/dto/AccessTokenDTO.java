@@ -12,9 +12,9 @@ import lombok.Data;
 @Data
 public class AccessTokenDTO {
     //github返回access_token所携带的参数
-    private String client_id;
-    private String client_secret;
+    private String clientId;
+    private String clientSecret;
     private String code;
-    private String redirect_uri;
+    private String redirectUri;
     private String state;
 }

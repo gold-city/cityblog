@@ -142,7 +142,8 @@
                         <version>1.4.199</version><!--保持版本一致-->
                     </dependency>
                 </dependencies>
-                <!--需要配置文件配置连接信息，默认位置resources下-->
+                <!--需要配置文件配置连接信息，默认位置resources下generatorconfig.xml-->
+                <!--告诉spring xml的位置-->
             </plugin>
 
 
