@@ -1,12 +1,15 @@
 package com.city.blog.blog.controller;
 
-import com.city.blog.blog.mapper.QuestionMapper;
+import com.city.blog.blog.dto.QuestionDTO;
 import com.city.blog.blog.model.Question;
 import com.city.blog.blog.model.User;
+import com.city.blog.blog.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
@@ -22,7 +25,7 @@ import java.util.Map;
 public class PublishController {
 
     @Autowired
-    private QuestionMapper questionMapper;
+    private QuestionService questionService;
 
     @GetMapping("/publish")
     public String publish(HttpServletRequest request, Map<String, String> map) {
@@ -53,7 +56,7 @@ public class PublishController {
     }
 
     @PostMapping("/publish")
-    public String publish(Question question, Map<String, String> map, HttpServletRequest request) {//测试使用实体类接收参数
+    public String publish(Question question, @RequestParam(value = "id",required = false) Integer questionId, Map<String, String> map, HttpServletRequest request) {//测试使用实体类接收参数
         //获取cookie种的token查询当前用户的id
         /*Cookie[] cookies = request.getCookies();
         User user = null;
@@ -98,12 +101,21 @@ public class PublishController {
             }
 
             //补全自动注入的属性值，然后插入
-            question.setGmt_create(System.currentTimeMillis());
-            question.setGmt_modified(question.getGmt_create());
             question.setCreator(user.getId());
-            questionMapper.create(question);
+            question.setId(questionId);//如果用户通过前端修改questionid值，则能会修改到别人的问题，这逻辑有问题
+            questionService.insertOrUpdate(question);
             //发布成功，跳回首页显示内容
             return "redirect:/";
         }
+    }
+    @GetMapping("/publish/{questionId}")
+    public String questionEdit(@PathVariable("questionId") Integer questionId,Map<String,Object> map){
+        QuestionDTO question = questionService.queryQuestionByQuestionId(questionId);
+        map.put("tag", question.getTag());
+        map.put("description", question.getDescription());
+        map.put("title", question.getTitle());
+        map.put("edit","提交修改");
+        map.put("questionId",questionId);
+        return "publish";
     }
 }

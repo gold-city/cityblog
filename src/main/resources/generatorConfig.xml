@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />加载db驱动，maven配置插件的时候加载了-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="org.h2.Driver"
+                        connectionURL="jdbc:h2:~/blogdata"
+                        userId="sa"
+                        password="123">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--实体类位置-->
+        <javaModelGenerator targetPackage="com.city.blog.blog.model" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" /><!--查出来的数据时候去掉空格-->
+        </javaModelGenerator>
+
+        <!--xml文件路径-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--生成接口位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.city.blog.blog.mapper"  targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--映射数据库表的设置属性-->
+        <table tableName="user" domainObjectName="User" >
+        </table>
+
+    </context>
+</generatorConfiguration>

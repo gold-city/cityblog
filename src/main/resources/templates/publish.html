@@ -24,6 +24,7 @@
             <div style="width: 100%;height: 60px; margin-bottom: 20px; border-bottom: 1px solid #0f0f0f;"><h2><span
                     class="glyphicon glyphicon-edit" aria-hidden="true"></span>&ensp;发起</h2></div>
             <form action="/publish" method="post">
+                <input type="hidden" name="id" th:value="${questionId}">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要):</label>
                     <input type="text" th:value="${title}" class="form-control" name="title" id="title"
@@ -49,7 +50,7 @@
                              th:text="${error}" role="alert"></div>
                         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" th:if="${error==null}"></div>
                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
-                            <button type="submit" class="btn btn-success" style="margin-left: 50%;margin-top: 7px">发布
+                            <button th:text="${edit}!=null?${edit}:'提交'" type="submit" class="btn btn-success" style="margin-left: 50%;margin-top: 7px">发布
                             </button>
                         </div>
                     </div>
