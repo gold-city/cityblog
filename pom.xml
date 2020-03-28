@@ -143,7 +143,7 @@
                     </dependency>
                 </dependencies>
                 <!--需要配置文件配置连接信息，默认位置resources下generatorconfig.xml-->
-                <!--告诉spring xml的位置-->
+                <!--告诉spring 接口的位置springboot主类，加扫描包，properties加告诉mybatis mapper.xml位置-->
             </plugin>
 
 

@@ -36,7 +36,9 @@ public class UserService {
             updateUser.setAvatarUrl(user1.getAvatarUrl());
             updateUser.setName(user1.getName());
             updateUser.setToken(user1.getToken());
-
+            updateUser.setGmtCreate(dbUser.getGmtCreate());
+            updateUser.setAccountId(dbUser.getAccountId());
+            updateUser.setId(dbUser.getId());
             UserExample userExample1 = new UserExample();
             userExample1.createCriteria().andIdEqualTo(dbUser.getId());//根据id查
             //查到的user和updateuser相比插入

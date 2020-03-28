@@ -6,6 +6,9 @@
 <generatorConfiguration>
     <!--<classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />加载db驱动，maven配置插件的时候加载了-->
     <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--mybatis提供的分页-->
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
         <jdbcConnection driverClass="org.h2.Driver"
                         connectionURL="jdbc:h2:~/blogdata"
                         userId="sa"
@@ -33,8 +36,8 @@
         </javaClientGenerator>
 
         <!--映射数据库表的设置属性-->
-        <table tableName="question" domainObjectName="Question" >
-        </table>
+        <table tableName="question" domainObjectName="Question" ></table>
+        <table tableName="user" domainObjectName="User" ></table>
 
     </context>
 </generatorConfiguration>

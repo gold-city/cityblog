@@ -49,10 +49,10 @@ public class AuthorizeController {
         //点击登录，跳到github项目id携带参数，访问返回项目服务器地址接收code，进行验证，验证完再跳到github获取个人信息，然后返回，然后项目获取用户名
         //通过okhttp在java后台进行访问url地址获取信息（okhttp是一个插件，有在后台访问网站的功能）
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
-        accessTokenDTO.setClientId(clientId);
-        accessTokenDTO.setClientSecret(clientSecret);
+        accessTokenDTO.setClient_id(clientId);
+        accessTokenDTO.setClient_secret(clientSecret);
         accessTokenDTO.setCode(code);
-        accessTokenDTO.setRedirectUri(redirectUri);
+        accessTokenDTO.setRedirect_uri(redirectUri);
         accessTokenDTO.setState(state);
         String accessTokenDTO1 = githubProvider.getAccessTokenDTO(accessTokenDTO);
         GitHubUser user = githubProvider.getUser(accessTokenDTO1);
@@ -75,7 +75,6 @@ public class AuthorizeController {
             //request.getSession().setAttribute("user",user);
             //自定义session和cookie,使用指令标识符token进行绑定，前端判定token验证是否登录,以前逻辑是通过session中是否存在user（或name）对象
             response.addCookie(new Cookie("token",token));
-
             return "redirect:/";//重定向，回复地址,定向到/的requestmapper（“/”）:服务器内转服务器，加redirect否者认为跳页面，如果重定向页面则redirect：index。html，如果转发则index
         }else{
             return "redirect:/";
