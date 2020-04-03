@@ -15,10 +15,10 @@
 
   <!--question自定义追加sql-->
   <!--使用sql对阅读数并发进行优化，原sql—直接获取再插入，现在是插入时再sql中获取-->
-  <update id="incView" parameterType="map">
+  <update id="incView" parameterType="com.city.blog.blog.model.Question">
     update QUESTION
     set
-    VIEW_COUNT=VIEW_COUNT+#{record.viewCount,jdbcType=INTEGER}
-    where id=#{record.id}
+    VIEW_COUNT=VIEW_COUNT+#{viewCount,jdbcType=INTEGER}
+    where id=#{id}
   </update>
 </mapper>
