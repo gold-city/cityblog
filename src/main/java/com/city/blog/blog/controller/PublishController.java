@@ -23,6 +23,7 @@ import java.util.Map;
  */
 @Controller
 public class PublishController {
+    private Integer questionId;
 
     @Autowired
     private QuestionService questionService;
@@ -102,14 +103,16 @@ public class PublishController {
 
             //补全自动注入的属性值，然后插入
             question.setCreator(user.getId());
-            question.setId(questionId);//如果用户通过前端修改questionid值，则能会修改到别人的问题，这逻辑有问题
-            questionService.insertOrUpdate(question);
+            //如果用户通过前端修改questionid值，则能会修改到别人的问题，这逻辑有问题
+            question.setId(questionId);
+            questionService.insertOrUpdate(question,this.questionId);
             //发布成功，跳回首页显示内容
             return "redirect:/";
         }
     }
     @GetMapping("/publish/{questionId}")
     public String questionEdit(@PathVariable("questionId") Integer questionId,Map<String,Object> map){
+        this.questionId=questionId;
         QuestionDTO question = questionService.queryQuestionByQuestionId(questionId);
         map.put("tag", question.getTag());
         map.put("description", question.getDescription());

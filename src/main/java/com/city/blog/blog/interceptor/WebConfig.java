@@ -11,10 +11,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * Date: 2020/3/22
  * Time: 21:47
  * Description: No Description
+ *
+ *
+ * 过滤器
+ * @EnableWebMvc---拦截静态资源
  */
-//过滤器
 @Configuration
-//@EnableWebMvc---拦截静态资源
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
@@ -22,6 +24,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");//拦截所有地址执行sessionintercceptor方法
+        //拦截所有地址执行sessionintercceptor方法
+        registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");
     }
 }

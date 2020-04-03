@@ -57,7 +57,7 @@ public class PaginationDTO {
         }else{
             showPrevious=true;
         }
-        if (page==totalPage){
+        if (page.equals(totalPage)){
             showNext=false;
         }else {
             showNext=true;

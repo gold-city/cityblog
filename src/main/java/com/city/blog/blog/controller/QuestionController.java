@@ -27,10 +27,10 @@ public class QuestionController {
         //查id为questionId的question,返回到显示question的页面
         QuestionDTO questionDTO = questionService.queryQuestionByQuestionId(questionId);
         if (questionDTO!=null){
+            questionService.incView(questionId);
             map.put("questionDTO",questionDTO);
             return "question";
         }
-        map.put("error","话题不存在或已经删除！");
         return "redirect:/";
     }
 }

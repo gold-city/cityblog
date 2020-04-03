@@ -24,6 +24,7 @@ import java.util.UUID;
  * Description: No Description
  *
  * ctrl+e在idea内切换class文件
+ * @author Cheng
  */
 @Controller
 public class AuthorizeController {
@@ -31,7 +32,9 @@ public class AuthorizeController {
     @Autowired
     private GithubProvider githubProvider;
 
-    //获取code配置文件中的参数信息
+    /**
+        获取code配置文件中的参数信息
+    */
     @Value("${github.client.id}")
     private String clientId;
 

@@ -190,12 +190,10 @@
       This element was generated on Sat Mar 28 10:02:51 CST 2020.
     -->
     insert into QUESTION (ID, TITLE, GMT_CREATE, 
-      GMT_MODIFIED, CREATOR, COMMENT_COUNT, 
-      VIEW_COUNT, LIKE_COUNT, TAG, 
+      GMT_MODIFIED, CREATOR,  TAG,
       DESCRIPTION)
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=BIGINT}, 
-      #{gmtModified,jdbcType=BIGINT}, #{creator,jdbcType=INTEGER}, #{commentCount,jdbcType=INTEGER}, 
-      #{viewCount,jdbcType=INTEGER}, #{likeCount,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, 
+      #{gmtModified,jdbcType=BIGINT}, #{creator,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR},
       #{description,jdbcType=CLOB})
   </insert>
   <insert id="insertSelective" parameterType="com.city.blog.blog.model.Question">
