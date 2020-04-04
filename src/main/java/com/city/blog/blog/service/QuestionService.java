@@ -141,7 +141,8 @@ public class QuestionService {
             //插入
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
-            questionMapper.insert(question);
+            //insertSelective选择性插入如果值为空，则不插入该值，insert，全部插入，如果值为空，则插入空
+            questionMapper.insertSelective(question);
         }
     }
 

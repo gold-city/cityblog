@@ -6,10 +6,7 @@ import com.city.blog.blog.model.User;
 import com.city.blog.blog.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
@@ -57,7 +54,7 @@ public class PublishController {
     }
 
     @PostMapping("/publish")
-    public String publish(Question question, @RequestParam(value = "id",required = false) Integer questionId, Map<String, String> map, HttpServletRequest request) {//测试使用实体类接收参数
+    public String publish(/*@requestboby是用来接收json数据封装到对象的，如果前端传来的不是json数据，不需要加*/Question question, @RequestParam(value = "id",required = false) Integer questionId, Map<String, String> map, HttpServletRequest request) {//测试使用实体类接收参数
         //获取cookie种的token查询当前用户的id
         /*Cookie[] cookies = request.getCookies();
         User user = null;

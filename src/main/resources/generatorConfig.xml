@@ -36,8 +36,10 @@
         </javaClientGenerator>
 
         <!--映射数据库表的设置属性-->
-        <table tableName="question" domainObjectName="Question" ></table>
-        <table tableName="user" domainObjectName="User" ></table>
+        <!--重复生成会覆盖，如果改了生成的mapper。xml，重新生成会初始化，需要哪个开哪个就好，需要改的话最好新建mapper。xml-->
+        <!--<table tableName="question" domainObjectName="Question" ></table>
+        <table tableName="user" domainObjectName="User" ></table>-->
+        <table tableName="comment" domainObjectName="Comment" ></table>
 
     </context>
 </generatorConfiguration>

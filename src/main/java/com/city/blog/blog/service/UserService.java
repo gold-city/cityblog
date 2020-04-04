@@ -28,7 +28,7 @@ public class UserService {
             //将插入时间放里面可以避免每次查询github都跟新插入数据库的时间，而头像，名字不用，因为github可能更改
             user1.setGmtCreate(System.currentTimeMillis());//用户建入数据库的时间
             user1.setGmtModified(user1.getGmtCreate());//用户修改用户信息的时间
-            userMapper.insert(user1);
+            userMapper.insertSelective(user1);
         }else {
             User dbUser = users.get(0);//数据库user拿id查询
             User updateUser = new User();//更新的user
@@ -36,13 +36,10 @@ public class UserService {
             updateUser.setAvatarUrl(user1.getAvatarUrl());
             updateUser.setName(user1.getName());
             updateUser.setToken(user1.getToken());
-            updateUser.setGmtCreate(dbUser.getGmtCreate());
-            updateUser.setAccountId(dbUser.getAccountId());
-            updateUser.setId(dbUser.getId());
             UserExample userExample1 = new UserExample();
             userExample1.createCriteria().andIdEqualTo(dbUser.getId());//根据id查
             //查到的user和updateuser相比插入
-            userMapper.updateByExample(updateUser,userExample1);//读方法名，updateByExample更新自定义sql，updateByExampleSelective更新局部变量
+            userMapper.updateByExampleSelective(updateUser,userExample1);//读方法名，updateByExample更新自定义sql，updateByExampleSelective更新局部变量
         }
     }
 }
