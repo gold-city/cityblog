@@ -1,9 +1,17 @@
 package com.city.blog.blog.advice;
 
+import com.alibaba.fastjson.JSON;
+import com.city.blog.blog.dto.ResultDTO;
+import com.city.blog.blog.exception.CustomizeErrorCode;
 import com.city.blog.blog.exception.CustomizeException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,14 +26,34 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice
 public class CustomizeExceptionHandler {
     @ExceptionHandler(Exception.class)
-    ModelAndView handle(Throwable ex){//ex:异常类型，课自定义异常，ex的值为自己的异常时处理
+    ModelAndView handle(Throwable ex, HttpServletRequest request, HttpServletResponse response) throws IOException {//ex:异常类型，课自定义异常，ex的值为自己的异常时处理---方法返回obj，实际返回modelandview也能实现跳转
+        ResultDTO resultDTO;
+        String contentType = request.getContentType();
         ModelAndView modelAndView = new ModelAndView("error");
-        //当ex对象是CustomizeException的实例时返回true
-        if (ex instanceof CustomizeException){
-            modelAndView.addObject("message",ex.getMessage());
+        String contentTypeEquals="application/json";
+        if (contentTypeEquals.equals(contentType)){
+            //返回json
+            if (ex instanceof CustomizeException){
+                resultDTO=ResultDTO.errorOf((CustomizeException)ex);
+            }else {
+                resultDTO=ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
+            }
+            response.setContentType("application/json");
+            response.setStatus(200);
+            response.setCharacterEncoding("UTF-8");
+            PrintWriter writer = response.getWriter();
+            writer.write(JSON.toJSONString(resultDTO));
+            writer.close();
+            return null;
         }else {
-            modelAndView.addObject("message","网络崩溃,请稍后访问!");
+            //跳转错误页面
+            //当ex对象是CustomizeException的实例时返回true
+            if (ex instanceof CustomizeException){
+                modelAndView.addObject("message",ex.getMessage());
+            }else {
+                modelAndView.addObject("message",CustomizeErrorCode.SYS_ERROR.getMessage());
+            }
+            return modelAndView;
         }
-        return modelAndView;
     }
 }

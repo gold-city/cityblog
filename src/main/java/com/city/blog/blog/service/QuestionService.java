@@ -156,6 +156,7 @@ public class QuestionService {
         questionMapper.updateByExampleSelective(question,questionExample);*/
         Question question = new Question();
         question.setId(questionId);
+        //设置累加的值，sql中会取值添加
         question.setViewCount(1);
         questionExtMapper.incView(question);
     }

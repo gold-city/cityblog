@@ -14,20 +14,24 @@ package com.city.blog.blog.exception;
  */
 public class CustomizeException extends RuntimeException {
     private String message;
-    public CustomizeException(String message){
-        this.message=message;
-    }
-
+    private Integer code;
     /**
      * @param errorCode
      * 类型为接口是因为接口的实现类枚举获取了调用者的信息，把参数设置到了接口，这里通过接口拿到，然后被CustomizeExceptionHandler捕捉，
      * 返回给前端设置
+     * throw new CustomizeException（CustomizeErrorCode.xxx）
+     * new一个异常（CustomizeException）,这个异常被异常捕捉（CustomizeExceptionHandler）,拿到message，由（CustomizeErrorCode.xxx）枚举类拿到message
      */
     public CustomizeException(ICustomizeErrorCode errorCode){
         this.message=errorCode.getMessage();
+        this.code=errorCode.getCode();
     }
     @Override
     public String getMessage() {
         return message;
+    }
+
+    public Integer getCode() {
+        return code;
     }
 }
