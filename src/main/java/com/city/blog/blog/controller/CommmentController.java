@@ -1,18 +1,19 @@
 package com.city.blog.blog.controller;
 
 import com.city.blog.blog.dto.CommentDTO;
+import com.city.blog.blog.dto.CommentListDTO;
 import com.city.blog.blog.dto.ResultDTO;
+import com.city.blog.blog.enums.CommentTypeEnum;
 import com.city.blog.blog.exception.CustomizeErrorCode;
 import com.city.blog.blog.model.Comment;
 import com.city.blog.blog.model.User;
 import com.city.blog.blog.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -48,5 +49,12 @@ public class CommmentController {
         }
         //抛异常使用码
         return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
+    }
+
+    @ResponseBody
+    @GetMapping("/comment/{id}")
+    public ResultDTO<List<CommentListDTO>> getTwoComment(@PathVariable("id") Integer id){
+        List<CommentListDTO> commentListDTOS = commentService.queryCommentByQuestionId(id, CommentTypeEnum.COMMENT);
+        return ResultDTO.okOf(commentListDTOS);
     }
 }

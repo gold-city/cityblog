@@ -98,6 +98,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!--commons-lang3字符串比较等等-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
 
     </dependencies>
 

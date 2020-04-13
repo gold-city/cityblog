@@ -21,26 +21,7 @@
             bottom: 10px;
         }
     </style>
-    <script>
-        function postReply() {
-            var questionId = $("#questionId").val();
-            var description = $("#description").val();
-            $.ajax({
-                type:"POST",
-                url:"/comment",
-                contentType:"application/json",
-                data:JSON.stringify({
-                    "parentId":questionId,
-                    "content":description,
-                    "type":1
-                }),
-                success:function (data) {
-                    console.log(data)
-                },
-                dataType:"json"
-            });
-        }
-    </script>
+    <script src="/js/myjs.js"></script>
 </head>
 <body style="background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) no-repeat fixed;">
 <div th:insert="~{navigation :: nav}"></div>
@@ -48,7 +29,8 @@
      style="background-color: #ffffff;padding-bottom: 20px;margin: 0 150px 40px 150px;border-radius: 3px;">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" style="border-right: 1px solid #8c8c8c;">
-            <div style="width: 100%;padding-bottom: 10px;margin-bottom: 20px; border-bottom: 1px solid #0f0f0f;"><h2
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                 style="width: 100%;padding-bottom: 10px;margin-bottom: 20px; border-bottom: 1px solid #0f0f0f;"><h2
                     style="margin-left: 10px;"><span
                     class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&ensp;<span
                     th:text="${questionDTO.getTitle()}"></span></h2>
@@ -58,7 +40,8 @@
                     &ensp;阅读数：<span th:text="${questionDTO.viewCount}"></span>
                 </div>
             </div>
-            <div style="width: 100%; padding-bottom: 25px;margin-bottom: 20px; border-bottom: 1px solid #0f0f0f;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                 style="width: 100%; padding-bottom: 8px;margin-bottom: 60px; border-bottom: 1px solid #0f0f0f;">
                 <h3>问题描述 ：</h3>
                 <div style="font-size: 20px;word-wrap: break-word;word-break: break-all;overflow: hidden;"
                      th:text="${questionDTO.getDescription()}"></div>
@@ -68,8 +51,83 @@
                 <!--如果用户自己传值修改的话，有bug，得后台验证，已解决-->
             </div>
 
+            <!--回复内容-->
+            <h3 style="margin-left: 5px" th:if="${questionDTO.getCommentCount()!=0}"><span
+                    th:text="${questionDTO.getCommentCount()}"></span>个回复</h3>
+            <div th:if="${questionCommentS.size()!=0}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                 style="margin-top: 5px;border: 1px solid #b2bec3;">
+                <div style="margin-bottom: 20px;margin-top: 20px;padding-bottom: 5px">
+
+                    <div class="media" style="border-bottom: 1px #dfe6e9 solid;padding-bottom: 5px"
+                         th:each="comment:${questionCommentS}">
+                        <div class="media-left media-middle" style="vertical-align:text-top;">
+                            <img style="width: 50px; height: 50px" th:src="${comment.getUser().getAvatarUrl()}"
+                                 class="media-object">
+                        </div>
+                        <div class="media-body" style="font-size: 20px;width: 100%;">
+                            <h5 class="media-heading" style="color: #636e72"
+                                th:text="${comment.getUser().getName()}"></h5>
+                            <span style="white-space:normal; word-break:break-all;overflow:hidden;"
+                                  th:text="${comment.getContent()}"></span>
+                            <div style="width: 100%;margin-top: 5px;">
+                                <span>
+                                    <span style="padding-bottom: 2px;border-radius: 5px;border: 1px solid #DFE6E9"><span
+                                            style="margin:0 5px;"><svg class="icon"
+                                                                       style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                                                                       viewBox="0 0 1024 1024" version="1.1"
+                                                                       xmlns="http://www.w3.org/2000/svg" p-id="579"><path
+                                            d="M621.674667 408.021333c16.618667-74.24 28.224-127.936 34.837333-161.194666C673.152 163.093333 629.941333 85.333333 544.298667 85.333333c-77.226667 0-116.010667 38.378667-138.88 115.093334l-0.586667 2.24c-13.728 62.058667-34.72 110.165333-62.506667 144.586666a158.261333 158.261333 0 0 1-119.733333 58.965334l-21.909333 0.469333C148.437333 407.808 106.666667 450.816 106.666667 503.498667V821.333333c0 64.8 52.106667 117.333333 116.394666 117.333334h412.522667c84.736 0 160.373333-53.568 189.12-133.92l85.696-239.584c21.802667-60.96-9.536-128.202667-70.005333-150.186667a115.552 115.552 0 0 0-39.488-6.954667H621.674667zM544.256 149.333333c39.253333 0 59.498667 36.48 49.888 84.928-7.573333 38.144-21.984 104.426667-43.221333 198.666667-4.512 20.021333 10.56 39.093333 30.912 39.093333h218.666666c6.101333 0 12.16 1.066667 17.909334 3.168 27.445333 9.984 41.674667 40.554667 31.776 68.266667l-85.568 239.573333C744.981333 838.026667 693.301333 874.666667 635.402667 874.666667H223.498667C194.314667 874.666667 170.666667 850.784 170.666667 821.333333V503.498667c0-17.866667 14.144-32.448 31.829333-32.821334l21.866667-0.469333a221.12 221.12 0 0 0 167.381333-82.56c34.346667-42.602667 59.146667-99.306667 74.869333-169.877333C482.101333 166.336 499.552 149.333333 544.266667 149.333333z"
+                                            p-id="580"></path></svg><span
+                                            style="font-size: 15px;color: #636E72;margin:0px 5px"
+                                            th:text="${comment.getLikeCount()}"></span></span></span>
+                                    <span onclick="offTwo(this)" onn="t" th:id="${comment.getId()}"
+                                          th:data-id="${comment.getId()}"
+                                          style="padding-bottom: 2px;border-radius: 5px;border: 1px solid #DFE6E9"><span
+                                            style="margin:0 5px;"><svg class="icon"
+                                                                       style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                                                                       viewBox="0 0 1024 1024" version="1.1"
+                                                                       xmlns="http://www.w3.org/2000/svg" p-id="1360"><path
+                                            d="M821.333333 800H547.584l-86.464 96.074667a32 32 0 1 1-47.573333-42.816l96-106.666667A32 32 0 0 1 533.333333 736h288a53.333333 53.333333 0 0 0 53.333334-53.333333V234.666667a53.333333 53.333333 0 0 0-53.333334-53.333334H202.666667a53.333333 53.333333 0 0 0-53.333334 53.333334v448a53.333333 53.333333 0 0 0 53.333334 53.333333h138.666666a32 32 0 0 1 0 64H202.666667c-64.8 0-117.333333-52.533333-117.333334-117.333333V234.666667c0-64.8 52.533333-117.333333 117.333334-117.333334h618.666666c64.8 0 117.333333 52.533333 117.333334 117.333334v448c0 64.8-52.533333 117.333333-117.333334 117.333333zM704 341.333333a32 32 0 0 1 0 64H320a32 32 0 0 1 0-64h384zM512 512a32 32 0 0 1 0 64H320a32 32 0 0 1 0-64h192z"
+                                            p-id="1361"></path></svg><span
+                                            style="font-size: 15px;color: #636E72;margin:0px 5px">0</span></span></span>
+                                </span>
+                                <span style="margin-left:70%;font-size: 15px;"
+                                      th:text="${#dates.format(comment.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></span>
+                                <!--点击显示二级评论-->
+
+                                <div style="margin:10px 0px;border-radius: 5px;padding: 5px;border: 1px solid #636E72;position: relative;"
+                                     class="collapse"
+                                     th:id="${'comment-'+comment.getId()}">
+                                    <div style="border-bottom: 1px solid #636E72;margin: 5px 0px" th:id="${'commentboby-'+comment.getId()}">
+                                        <!--显示二级评论,js追加
+                                        --<div class="media" style="border-bottom: 1px solid #DFE6E9;padding: 15px 0px;margin-bottom: 10px">
+                                           -- <div class="media-left media-middle" style="vertical-align:text-top;">
+                                                --<img class="media-object" style="width: 50px; height: 50px" th:src="${comment.getUser().getAvatarUrl()}">
+                                            --</div>
+                                            --<div class="media-body" style="font-size: 20px;width: 100%;">
+                                                --<h5 class="media-heading"><span style="color: #0984e3">名字</span> · <span style="color: #636E72" th:text="${#dates.format(comment.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></span></h5>
+                                                --<span style="white-space:normal; word-break:break-all;overflow:hidden;"
+                                                      th:text="${comment.getContent()}"></span>
+                                            --</div>
+                                        </div>
+                                        -->
+
+                                    </div>
+                                    <!--二级评论-->
+                                    <textarea class="form-control" th:id="'commentText'+${comment.getId()}"
+                                              placeholder="请输入你的回复内容..."
+                                              rows="2" style="resize: none;"></textarea>
+                                    <button th:onclick="'commentReply('+${comment.getId()}+')'" class="btn btn-success" style="margin-left: 92.7%;margin-top: 10px">回复</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <!--编辑器-->
-            <div>
+            <div id="edit" style="margin-top: 15px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label for="description">问题回复:</label>
                 <p></p>
                 <div style="position: relative;">
@@ -79,15 +137,15 @@
                               rows="15" style="resize: none;"></textarea>
                     <div class="reset"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
                 </div>
-                <button class="btn btn-success" onclick="postReply()" style="margin-left: 94%;margin-top: 10px" id="reply">回复
+                <button class="btn btn-success" onclick="postReply()" style="margin-left: 94%;margin-top: 10px"
+                        id="reply">回复
                 </button>
+                <script>
+                    $(".reset").click(function () {
+                        $("#description").val("");
+                    })
+                </script>
             </div>
-            <script>
-                $(".reset").click(function () {
-                    $("#description").val("");
-                })
-            </script>
-
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom: solid 1px #b2bec3;">

@@ -18,6 +18,7 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode{
     TARGET_PARAM_NOT_EXIST(2004,"请选择问题或评论进行回复！"),
     SYS_ERROR(2005,"网络崩溃,请稍后访问!"),
     TYPE_PARAM_WRONG(2006,"该评论级别出错或已删除！"),
+    CONTENT_NOT_FOUND(2008,"回复的内容不能为空！"),
     COMMENT_NOT_FOUND(2007,"你回复的评论不存在或已删除！");
 
     private String message;

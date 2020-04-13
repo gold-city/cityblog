@@ -1,16 +1,25 @@
 package com.city.blog.blog.service;
 
+import com.city.blog.blog.dto.CommentListDTO;
 import com.city.blog.blog.enums.CommentTypeEnum;
 import com.city.blog.blog.exception.CustomizeErrorCode;
 import com.city.blog.blog.exception.CustomizeException;
 import com.city.blog.blog.mapper.CommentMapper;
 import com.city.blog.blog.mapper.QuestionExtMapper;
 import com.city.blog.blog.mapper.QuestionMapper;
-import com.city.blog.blog.model.Comment;
-import com.city.blog.blog.model.Question;
+import com.city.blog.blog.mapper.UserMapper;
+import com.city.blog.blog.model.*;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,6 +40,8 @@ public class CommentService {
     @Autowired
     private QuestionMapper questionMapper;
 
+    @Autowired
+    private UserMapper userMapper;
     //事物-如果方法中需要多次对数据库进行关联的操作，则需要加入事物，要么全部成功，如果部分出现异常，则进行错做回滚
     @Transactional//springboot提供的事物注解
     public void insertSelective(Comment comment) {
@@ -39,6 +50,10 @@ public class CommentService {
             //评论不存在，抛出异常，使用枚举，传递异常界面显示文字
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_EXIST);
         }
+        if (StringUtils.isBlank(comment.getContent())){
+            throw new CustomizeException(CustomizeErrorCode.CONTENT_NOT_FOUND);
+        }
+
         if (comment.getType()==null||!CommentTypeEnum.isExist(comment.getType())){
             throw new CustomizeException(CustomizeErrorCode.TYPE_PARAM_WRONG);
         }
@@ -49,7 +64,7 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
             commentMapper.insertSelective(comment);
-            Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
+            Question question = questionMapper.selectByPrimaryKey(comment1.getParentId());
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
         }else {
@@ -62,5 +77,34 @@ public class CommentService {
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
         }
+    }
+
+    public List<CommentListDTO> queryCommentByQuestionId(Integer questionId,CommentTypeEnum type) {
+        CommentExample commentExample = new CommentExample();
+        commentExample.createCriteria().andTypeEqualTo(type.getType()).andParentIdEqualTo(questionId);
+        //排序，查询出来后排序
+        commentExample.setOrderByClause("gmt_create desc");
+        List<Comment> comments = commentMapper.selectByExample(commentExample);
+        if (comments.size()==0) {
+            return new ArrayList<CommentListDTO>();
+        }
+        //抽取集合中的一个字段的值，重复会去掉，在根据值查取user
+        Set<Integer> collect = comments.stream().map(comment -> comment.getCommentator()).collect(Collectors.toSet());
+        List<Integer> integers = new ArrayList<>();
+        integers.addAll(collect);
+        UserExample userExample = new UserExample();
+        //根据list id集合查询
+        userExample.createCriteria().andIdIn(integers);
+        List<User> users = userMapper.selectByExample(userExample);
+        Map<Integer, User> collect1 = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
+
+        List<CommentListDTO> commentListDTOS=comments.stream().map(comment -> {
+            CommentListDTO commentListDTO = new CommentListDTO();
+            BeanUtils.copyProperties(comment,commentListDTO);
+            commentListDTO.setUser(collect1.get(comment.getCommentator()));
+            return commentListDTO;
+        }).collect(Collectors.toList());
+
+        return commentListDTOS;
     }
 }

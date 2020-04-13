@@ -13,6 +13,15 @@
     <!--bootstrap依赖jq必须在jq引入后引入bootstrap.min.js-->
     <script src="/js/bootstrap.min.js"></script>
     <!--自己写的jq代码放他两后面-->
+    <script>
+        window.onload=function () {
+            var item = window.localStorage.getItem("closable");
+            if (item=="true") {
+                window.close();
+                window.localStorage.removeItem("closable");
+            }
+        }
+    </script>
 </head>
 <body style="background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) no-repeat fixed;">
 <div th:insert="~{navigation :: nav}"></div>
