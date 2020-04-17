@@ -28,7 +28,7 @@ public class ProfileController {
     @GetMapping("/profile/{action}")///profile/questions----/profile/值-用来验证请求
     public String profile(@PathVariable(name = "action") String acttion, Map<String, Object> map,
                           HttpServletRequest request, @RequestParam(name = "page", defaultValue = "1") Integer page,
-                          @RequestParam(name = "size", defaultValue = "2") Integer size) {
+                          @RequestParam(name = "size", defaultValue = "5") Integer size) {
         /*Cookie[] tokens = request.getCookies();
         if (tokens != null && tokens.length != 0) {
             for (Cookie token : tokens) {

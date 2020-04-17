@@ -23,7 +23,7 @@ import java.util.List;
  * Description: No Description
  */
 @Controller
-public class CommmentController {
+public class CommentController {
 
     @Autowired
     private CommentService commentService;

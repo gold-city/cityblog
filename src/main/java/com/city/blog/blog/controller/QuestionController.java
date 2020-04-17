@@ -33,6 +33,9 @@ public class QuestionController {
     public String questionn(@PathVariable("questionId") Integer questionId, Map<String, Object> map){
         //查id为questionId的question,返回到显示question的页面
         QuestionDTO questionDTO = questionService.queryQuestionByQuestionId(questionId);
+        //查询tag相关的question
+        List<QuestionDTO> TagQuestionDTOList= questionService.selectQuestionByTag(questionDTO);
+        map.put("TagQuestionDTOList",TagQuestionDTOList);
         List<CommentListDTO> questionCommentS =commentService.queryCommentByQuestionId(questionId,CommentTypeEnum.QUESTION);
         map.put("questionCommentS",questionCommentS);
         if (questionDTO!=null){

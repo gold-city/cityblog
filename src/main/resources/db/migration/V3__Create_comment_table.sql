@@ -6,5 +6,6 @@ create table comment
 	commentator int not null,/*评论的user*/
 	content varchar(1024) not null,/*评论的内容*/
 	gmt_create bigint not null,/*评论时间*/
+	comment_count int default 0,/*评论数*/
 	like_count bigint default 0/*点赞数*/
 );

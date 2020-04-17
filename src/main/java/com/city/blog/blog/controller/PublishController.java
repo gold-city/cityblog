@@ -1,9 +1,11 @@
 package com.city.blog.blog.controller;
 
+import com.city.blog.blog.cache.TagCache;
 import com.city.blog.blog.dto.QuestionDTO;
 import com.city.blog.blog.model.Question;
 import com.city.blog.blog.model.User;
 import com.city.blog.blog.service.QuestionService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -26,25 +28,8 @@ public class PublishController {
     private QuestionService questionService;
 
     @GetMapping("/publish")
-    public String publish(HttpServletRequest request, Map<String, String> map) {
-        //获取cookie种的token查询当前用户的id
-        /*Cookie[] cookies = request.getCookies();
-        User user = null;
-        if (cookies != null&&cookies.length!=0) {
-            for (Cookie cookie : cookies) {
-                if ("token".equals(cookie.getName())){
-                    String creatorId = cookie.getValue();
-                    user = userMapper.queryUserByToken(creatorId);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }else{
-                        map.put("error","用户未登录！");
-                        return "publish";
-                    }
-                    break;
-                }
-            }
-        }*/
+    public String publish(HttpServletRequest request, Map<String, Object> map) {
+        map.put("Tags",TagCache.getTag());
         User user = (User) request.getSession().getAttribute("user");
         if (user != null) {
             return "publish";
@@ -54,26 +39,8 @@ public class PublishController {
     }
 
     @PostMapping("/publish")
-    public String publish(/*@requestboby是用来接收json数据封装到对象的，如果前端传来的不是json数据，不需要加*/Question question, @RequestParam(value = "id",required = false) Integer questionId, Map<String, String> map, HttpServletRequest request) {//测试使用实体类接收参数
-        //获取cookie种的token查询当前用户的id
-        /*Cookie[] cookies = request.getCookies();
-        User user = null;
-        if (cookies != null&&cookies.length!=0) {
-            for (Cookie cookie : cookies) {
-                if ("token".equals(cookie.getName())){
-                    String creatorId = cookie.getValue();
-                    user = userMapper.queryUserByToken(creatorId);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }else{
-                        map.put("error","用户未登录！");
-                        return "publish";
-                    }
-                    break;
-                }
-            }
-        }*/
-
+    public String publish(/*@requestboby是用来接收json数据封装到对象的，如果前端传来的不是json数据，不需要加*/Question question, @RequestParam(value = "id",required = false) Integer questionId, Map<String, Object> map, HttpServletRequest request) {//测试使用实体类接收参数
+        map.put("Tags",TagCache.getTag());
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
             map.put("error", "用户未登录！");
@@ -98,6 +65,14 @@ public class PublishController {
                 return "publish";
             }
 
+            //校验tag是否合法
+            String valid = TagCache.isValid(question.getTag());
+            if (StringUtils.isNotBlank(valid)){
+                map.put("error","输入的标签"+valid+"不存在！");
+                return "publish";
+            }
+
+
             //补全自动注入的属性值，然后插入
             question.setCreator(user.getId());
             //如果用户通过前端修改questionid值，则能会修改到别人的问题，这逻辑有问题
@@ -109,6 +84,7 @@ public class PublishController {
     }
     @GetMapping("/publish/{questionId}")
     public String questionEdit(@PathVariable("questionId") Integer questionId,Map<String,Object> map){
+        map.put("Tags",TagCache.getTag());
         this.questionId=questionId;
         QuestionDTO question = questionService.queryQuestionByQuestionId(questionId);
         map.put("tag", question.getTag());

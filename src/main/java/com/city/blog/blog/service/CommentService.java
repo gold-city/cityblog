@@ -4,10 +4,7 @@ import com.city.blog.blog.dto.CommentListDTO;
 import com.city.blog.blog.enums.CommentTypeEnum;
 import com.city.blog.blog.exception.CustomizeErrorCode;
 import com.city.blog.blog.exception.CustomizeException;
-import com.city.blog.blog.mapper.CommentMapper;
-import com.city.blog.blog.mapper.QuestionExtMapper;
-import com.city.blog.blog.mapper.QuestionMapper;
-import com.city.blog.blog.mapper.UserMapper;
+import com.city.blog.blog.mapper.*;
 import com.city.blog.blog.model.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -41,6 +38,9 @@ public class CommentService {
     private QuestionMapper questionMapper;
 
     @Autowired
+    private CommentExtMapper commentExtMapper;
+
+    @Autowired
     private UserMapper userMapper;
     //事物-如果方法中需要多次对数据库进行关联的操作，则需要加入事物，要么全部成功，如果部分出现异常，则进行错做回滚
     @Transactional//springboot提供的事物注解
@@ -67,6 +67,8 @@ public class CommentService {
             Question question = questionMapper.selectByPrimaryKey(comment1.getParentId());
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
+            comment1.setCommentCount(1);
+            commentExtMapper.incCommentCount(comment1);
         }else {
             //回复，如果type是question（2）parentid是question的id，所以用parentid查评论的父级
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());

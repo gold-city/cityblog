@@ -15,6 +15,7 @@
     </style>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/myjs.js"></script>
 </head>
 <body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) no-repeat fixed;">
 <div th:insert="~{navigation :: nav}"></div>
@@ -28,7 +29,7 @@
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要):</label>
                     <input type="text" th:value="${title}" class="form-control" name="title" id="title"
-                           placeholder="问题标题..">
+                           placeholder="问题标题.." autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="description">问题补充(必填，请参照右侧提醒):</label>
@@ -42,7 +43,33 @@
                 <div class="form-group">
                     <label for="tag">添加标签:</label>
                     <input type="text" th:value="${tag}" class="form-control" name="tag" id="tag"
-                           placeholder="输入标签以，隔开">
+                           placeholder="输入标签以，隔开" autocomplete="off" onclick="offTag()">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="select-tag"
+                         style="margin:5px 10px 5px 0px; display: none;padding-left: 0px;">
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" th:each="tagss,stat:${Tags}" th:class="${stat.first?'active':''}">
+                                    <a th:href="'#'+${tagss.getBigTag()}" aria-controls="home" role="tab"
+                                       data-toggle="tab" th:text="${tagss.getBigTag()}"></a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" style="margin: 10px 5px 10px 0px;">
+                                <div role="tabpanel" class="tab-pane" th:id="${tagss.getBigTag()}" th:each="tagss,stat:${Tags}" th:class="${stat.first?'active tab-pane':'tab-pane'}">
+                                    <!--开发语言-->
+                                    <span th:each="tagsss:${tagss.tag}" style="margin:5px;">
+                                        <span class="label label-info"><svg class="icon"
+                                                                            style="margin-right: 2px;width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                                                                            viewBox="0 0 1024 1024" version="1.1"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            p-id="2848"><path
+                                                d="M849.5 465.9L566.8 183.3c-14.7-14.7-43.8-26.7-64.6-26.7l-214.7-0.1c-3.1 0-6.7 0.8-10 1.3l62.3 62.3c32.4 32.3 32.4 84.9 0 117.2-32.3 32.4-84.9 32.4-117.2 0L157 271.6c-1.5 6.3-2.5 12.4-2.5 18l0.6 215.5c0 20.9 12.1 49.9 26.8 64.5l281.7 281.7c27.5-90.4 76.9-173.4 144.3-240.8 67.6-67.7 150.9-117.1 241.6-144.6zM309.8 307.4c15.8-15.8 15.8-41.5 0-57.2L135.6 75.9C119.9 60 94.2 60 78.4 75.9a40.529 40.529 0 0 0-0.1 57.2l174.3 174.3c15.7 15.7 41.4 15.7 57.2 0zM930 546.9l-46.6-46.6c-89.2 22.8-174.6 69.3-245.4 140.2-70.9 70.9-117.3 156.3-140.2 245.4l46.6 46.6c36.7 36.7 96.9 36.7 133.7 0l252-252c36.6-36.7 36.6-96.9-0.1-133.6z"
+                                                p-id="2849"></path></svg><span
+                                                onclick="toTag(this)" th:text="${tagsss}" th:data-tag="${tagsss}"></span></span>
+                                     </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="container-fluid">
                     <div class="row">
@@ -50,7 +77,8 @@
                              th:text="${error}" role="alert"></div>
                         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" th:if="${error==null}"></div>
                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
-                            <button th:text="${edit}!=null?${edit}:'提交'" type="submit" class="btn btn-success" style="margin-left: 50%;margin-top: 7px">发布
+                            <button th:text="${edit}!=null?${edit}:'提交'" type="submit" class="btn btn-success"
+                                    style="margin-left: 50%;margin-top: 7px">发布
                             </button>
                         </div>
                     </div>

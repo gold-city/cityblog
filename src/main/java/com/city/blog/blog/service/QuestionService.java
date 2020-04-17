@@ -10,13 +10,16 @@ import com.city.blog.blog.mapper.UserMapper;
 import com.city.blog.blog.model.Question;
 import com.city.blog.blog.model.QuestionExample;
 import com.city.blog.blog.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -59,7 +62,9 @@ public class QuestionService {
         //（i-1）*5
         Integer offset = (page - 1) * size;
         //List<Question> questions = questionMapper.questionList(offset, size);
-        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(), new RowBounds(offset, size));
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample, new RowBounds(offset, size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         paginationDTO.setQuestions(questionDTOList);
         //获取页面总数
@@ -159,5 +164,20 @@ public class QuestionService {
         //设置累加的值，sql中会取值添加
         question.setViewCount(1);
         questionExtMapper.incView(question);
+    }
+
+    public List<QuestionDTO> selectQuestionByTag(QuestionDTO questionDTO) {
+        String[] split = StringUtils.split(questionDTO.getTag(), ",");
+        String collect = Arrays.stream(split).collect(Collectors.joining("|"));
+        Question question = new Question();
+        question.setId(questionDTO.getId());
+        question.setTag(collect);
+        List<Question> questions = questionExtMapper.selectQuestionByTag(question);
+        List<QuestionDTO> collect1 = questions.stream().map(q -> {
+            QuestionDTO questionDTO1 = new QuestionDTO();
+            BeanUtils.copyProperties(q, questionDTO1);
+            return questionDTO1;
+        }).collect(Collectors.toList());
+        return collect1;
     }
 }
