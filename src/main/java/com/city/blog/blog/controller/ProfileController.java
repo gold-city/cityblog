@@ -1,7 +1,9 @@
 package com.city.blog.blog.controller;
 
+import com.city.blog.blog.dto.NotificationDTO;
 import com.city.blog.blog.dto.PaginationDTO;
 import com.city.blog.blog.model.User;
+import com.city.blog.blog.service.NotificationService;
 import com.city.blog.blog.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,6 +27,9 @@ public class ProfileController {
 
     @Autowired
     private QuestionService questionService;
+
+    @Autowired
+    private NotificationService notificationService;
 
     @GetMapping("/profile/{action}")///profile/questions----/profile/值-用来验证请求
     public String profile(@PathVariable(name = "action") String acttion, Map<String, Object> map,
@@ -47,12 +53,17 @@ public class ProfileController {
             if ("questions".equals(acttion)) {
                 map.put("section", "questions");
                 map.put("sectionName", "我的问题");
+                PaginationDTO paginationDTO = questionService.questionByUserIdList(user.getId(), page, size);
+                map.put("paginationDTO", paginationDTO);
             } else if ("replies".equals(acttion)) {
+                //查询该用户的消息
+                List<NotificationDTO> notifications=notificationService.list(user.getId());
+                int size1 = notifications.size();
+                map.put("notificationDTOs",notifications);
+                map.put("noticeSize",size1);
                 map.put("section", "replies");
                 map.put("sectionName", "最新回复");
             }
-            PaginationDTO paginationDTO = questionService.questionByUserIdList(user.getId(), page, size);
-            map.put("paginationDTO", paginationDTO);
             return "profile";
         }
         return "redirect:/";

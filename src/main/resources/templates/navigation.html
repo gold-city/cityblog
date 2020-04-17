@@ -30,6 +30,14 @@
                             href="https://github.com/login/oauth/authorize?client_id=853b30b562f5685f5390&redirect_uri=http://localhost/callback&scope=user&state=1"
                             style="color: #f5f6fa">登录</a></li>
                     <li><a href="/publish" th:if="${session.user}!=null" style="color: #f5f6fa;">发布</a></li>
+
+
+
+                    <!--通知-->
+                    <li><a href="/profile/replies" th:if="${session.user}!=null" style="color: #f5f6fa;">通知<span style="margin-left: 8px;margin-top:-3px; background-color:#00bcd4;" class="badge" th:text="${noticeSize}"></span></a></li>
+
+
+
                     <li th:if="${session.user}!=null"><img width="40px" height="40px" style="border-radius: 6px;margin-left: 18px;margin-top: 5px"
                                                            th:src="${session.user.getAvatarUrl()}"/></li>
                     <li class="dropdown" th:if="${session.user}!=null">

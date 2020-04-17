@@ -2,6 +2,8 @@ package com.city.blog.blog.service;
 
 import com.city.blog.blog.dto.CommentListDTO;
 import com.city.blog.blog.enums.CommentTypeEnum;
+import com.city.blog.blog.enums.NotificationStatusEnum;
+import com.city.blog.blog.enums.NotificationTypeEnum;
 import com.city.blog.blog.exception.CustomizeErrorCode;
 import com.city.blog.blog.exception.CustomizeException;
 import com.city.blog.blog.mapper.*;
@@ -42,6 +44,9 @@ public class CommentService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private NotificationMapper notificationMapper;
     //事物-如果方法中需要多次对数据库进行关联的操作，则需要加入事物，要么全部成功，如果部分出现异常，则进行错做回滚
     @Transactional//springboot提供的事物注解
     public void insertSelective(Comment comment) {
@@ -69,6 +74,14 @@ public class CommentService {
             questionExtMapper.incCommentCount(question);
             comment1.setCommentCount(1);
             commentExtMapper.incCommentCount(comment1);
+            Notification notification = new Notification();
+            notification.setGmtCreate((int)System.currentTimeMillis());
+            notification.setType(NotificationTypeEnum.REPLY_COMMENT.getType());
+            notification.setOuterid(comment.getParentId());
+            notification.setNotifier(comment.getCommentator());
+            notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
+            notification.setReceiver(comment1.getCommentator());
+            notificationMapper.insertSelective(notification);
         }else {
             //回复，如果type是question（2）parentid是question的id，所以用parentid查评论的父级
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
@@ -78,6 +91,14 @@ public class CommentService {
             commentMapper.insertSelective(comment);
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
+            Notification notification = new Notification();
+            notification.setGmtCreate((int)System.currentTimeMillis());
+            notification.setType(NotificationTypeEnum.REPLY_QUESTION.getType());
+            notification.setOuterid(comment.getParentId());
+            notification.setNotifier(comment.getCommentator());
+            notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
+            notification.setReceiver(question.getCreator());
+            notificationMapper.insertSelective(notification);
         }
     }
 

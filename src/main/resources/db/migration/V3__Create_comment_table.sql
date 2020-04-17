@@ -9,3 +9,18 @@ create table comment
 	comment_count int default 0,/*评论数*/
 	like_count bigint default 0/*点赞数*/
 );
+
+
+create table notification
+(
+	id integer auto_increment,
+	notifier integer,
+	receiver integer,
+	outerId integer,
+	type integer,
+	gmt_create integer,
+	status integer default 0,
+	constraint notification_pk
+		primary key (id)
+);
+

@@ -1,6 +1,9 @@
 package com.city.blog.blog.controller;
 
+import com.city.blog.blog.dto.NotificationDTO;
 import com.city.blog.blog.dto.PaginationDTO;
+import com.city.blog.blog.model.User;
+import com.city.blog.blog.service.NotificationService;
 import com.city.blog.blog.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,6 +27,8 @@ public class IndexController {
 
     /*@Autowired
     private UserMapper userMapper;*/
+    @Autowired
+    private NotificationService notificationService;
 
     @Autowired
     private QuestionService questionService;
@@ -58,8 +64,13 @@ public class IndexController {
          *5,5     2
          *10，5   3
          * */
+        User user = (User)request.getSession().getAttribute("user");
         PaginationDTO paginationDTO = questionService.questionList(page, size);
         map.put("paginationDTO", paginationDTO);
+        List<NotificationDTO> notifications=notificationService.list(user.getId());
+        int size1 = notifications.size();
+        map.put("notificationDTOs",notifications);
+        map.put("noticeSize",size1);
         return "index";
     }
 }
