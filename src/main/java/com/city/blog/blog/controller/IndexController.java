@@ -67,10 +67,12 @@ public class IndexController {
         User user = (User)request.getSession().getAttribute("user");
         PaginationDTO paginationDTO = questionService.questionList(page, size);
         map.put("paginationDTO", paginationDTO);
-        List<NotificationDTO> notifications=notificationService.list(user.getId());
-        int size1 = notifications.size();
-        map.put("notificationDTOs",notifications);
-        map.put("noticeSize",size1);
+        if (user != null) {
+            List<NotificationDTO> notifications=notificationService.list(user.getId());
+            int size1 = notifications.size();
+            map.put("notificationDTOs",notifications);
+            map.put("noticeSize",size1);
+        }
         return "index";
     }
 }

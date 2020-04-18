@@ -5,6 +5,7 @@ import com.city.blog.blog.dto.GitHubUser;
 import com.city.blog.blog.model.User;
 import com.city.blog.blog.provider.GithubProvider;
 import com.city.blog.blog.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,7 @@ import java.util.UUID;
  * @author Cheng
  */
 @Controller
+@Slf4j//日志打印
 public class AuthorizeController {
 
     @Autowired
@@ -80,6 +82,8 @@ public class AuthorizeController {
             response.addCookie(new Cookie("token",token));
             return "redirect:/";//重定向，回复地址,定向到/的requestmapper（“/”）:服务器内转服务器，加redirect否者认为跳页面，如果重定向页面则redirect：index。html，如果转发则index
         }else{
+            //登录失败，打印日志
+            log.error("user null,{}",user);
             return "redirect:/";
         }
     }
