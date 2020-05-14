@@ -42,4 +42,8 @@ public class UserService {
             userMapper.updateByExampleSelective(updateUser,userExample1);//读方法名，updateByExample更新自定义sql，updateByExampleSelective更新局部变量
         }
     }
+
+    public void login(String name,String password){
+
+    }
 }

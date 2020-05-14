@@ -1,1 +1,1366 @@
-2020-04-18 22:04:20.382  INFO 7836 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 17:48:47.632  INFO 1420 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 1420 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 17:48:47.642  INFO 1420 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 17:48:47.792  INFO 1420 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 17:48:47.792  INFO 1420 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 17:48:49.172  INFO 1420 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 17:48:49.182  INFO 1420 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 17:48:49.182  INFO 1420 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 17:48:49.262  INFO 1420 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 17:48:49.262  INFO 1420 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1470 ms
+2020-05-14 17:48:49.312  INFO 1420 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 17:48:49.547  INFO 1420 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 17:48:49.552  INFO 1420 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 17:48:50.111  INFO 1420 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 17:48:50.182  INFO 1420 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 17:48:50.382  INFO 1420 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 17:48:50.432  INFO 1420 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 17:48:50.432  INFO 1420 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.337 seconds (JVM running for 5.377)
+2020-05-14 17:49:20.511  INFO 1420 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 17:49:20.511  INFO 1420 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 17:49:20.522  INFO 1420 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-14 17:49:20.600 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 17:49:20.616 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 17:49:20.628 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 17:49:20.630 DEBUG 1420 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 17:49:20.632 DEBUG 1420 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 17:49:20.642 DEBUG 1420 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 17:49:20.642 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 17:49:20.646 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 17:49:20.647 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 17:49:20.654 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 17:49:20.655 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 17:49:20.655 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 17:49:20.656 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 17:49:20.656 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 17:49:20.657 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 17:49:20.657 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 17:49:20.657 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 17:49:20.658 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 17:49:20.659 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 17:49:20.659 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 17:49:20.660 DEBUG 1420 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 17:52:21.942  INFO 7056 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 7056 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 17:52:21.947  INFO 7056 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 17:52:22.002  INFO 7056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 17:52:22.002  INFO 7056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 17:52:23.153  INFO 7056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 17:52:23.162  INFO 7056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 17:52:23.167  INFO 7056 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 17:52:23.254  INFO 7056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 17:52:23.254  INFO 7056 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1252 ms
+2020-05-14 17:52:23.297  INFO 7056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 17:52:23.486  INFO 7056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 17:52:23.501  INFO 7056 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 17:52:24.351  INFO 7056 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 17:52:24.421  INFO 7056 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 17:52:24.722  INFO 7056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 17:52:24.762  INFO 7056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 17:52:24.762  INFO 7056 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.188 seconds (JVM running for 4.201)
+2020-05-14 17:52:46.170  INFO 7056 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 17:52:46.171  INFO 7056 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 17:52:46.175  INFO 7056 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-05-14 18:15:36.751  INFO 11204 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 11204 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 18:15:36.767  INFO 11204 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 18:15:36.822  INFO 11204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 18:15:36.822  INFO 11204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 18:15:38.061  INFO 11204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 18:15:38.074  INFO 11204 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 18:15:38.074  INFO 11204 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 18:15:38.184  INFO 11204 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 18:15:38.184  INFO 11204 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1359 ms
+2020-05-14 18:15:38.222  INFO 11204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 18:15:38.424  INFO 11204 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 18:15:38.439  INFO 11204 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 18:15:39.402  INFO 11204 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 18:15:39.483  INFO 11204 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 18:15:39.683  INFO 11204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 18:15:39.737  INFO 11204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 18:15:39.741  INFO 11204 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.505 seconds (JVM running for 4.411)
+2020-05-14 18:16:06.669  INFO 11204 --- [http-nio-80-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 18:16:06.669  INFO 11204 --- [http-nio-80-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 18:16:06.675  INFO 11204 --- [http-nio-80-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-05-14 18:16:06.773 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 18:16:06.797 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 18:16:06.814 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 18:16:06.817 DEBUG 11204 --- [http-nio-80-exec-9] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 18:16:06.819 DEBUG 11204 --- [http-nio-80-exec-9] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 18:16:06.824 DEBUG 11204 --- [http-nio-80-exec-9] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 18:16:06.825 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 18:16:06.829 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 18:16:06.831 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 18:16:06.838 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 18:16:06.839 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 18:16:06.839 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 18:16:06.840 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 18:16:06.840 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 18:16:06.841 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 18:16:06.841 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 18:16:06.841 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 18:16:06.842 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 18:16:06.842 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 18:16:06.843 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 18:16:06.843 DEBUG 11204 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 18:17:13.674  INFO 11204 --- [Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 18:17:13.675  INFO 11204 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-14 18:17:13.967  INFO 11204 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-14 18:17:33.071  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 18:17:33.081  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 18:17:33.121  INFO 6468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 18:17:33.121  INFO 6468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 18:17:34.289  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 18:17:34.299  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 18:17:34.299  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 18:17:34.396  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 18:17:34.397  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1276 ms
+2020-05-14 18:17:34.439  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 18:17:34.648  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 18:17:34.655  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 18:17:36.148  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 18:17:36.234  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 18:17:36.414  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 18:17:36.455  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 18:17:36.458  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.723 seconds (JVM running for 4.666)
+2020-05-14 18:18:03.189  INFO 6468 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 18:18:03.189  INFO 6468 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 18:18:03.197  INFO 6468 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-05-14 19:55:24.271 ERROR 6468 --- [http-nio-80-exec-9] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-80-exec-9] Exception processing template "login": An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+Caused by: org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+
+2020-05-14 19:55:24.324 ERROR 6468 --- [http-nio-80-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)] with root cause
+
+org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-05-14 19:55:26.545 ERROR 6468 --- [http-nio-80-exec-6] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-80-exec-6] Exception processing template "login": An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+Caused by: org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+
+2020-05-14 19:55:26.547 ERROR 6468 --- [http-nio-80-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)] with root cause
+
+org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-05-14 19:55:27.041 ERROR 6468 --- [http-nio-80-exec-10] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-80-exec-10] Exception processing template "login": An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+Caused by: org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+
+2020-05-14 19:55:27.042 ERROR 6468 --- [http-nio-80-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)] with root cause
+
+org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-05-14 19:55:27.218 ERROR 6468 --- [http-nio-80-exec-3] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-80-exec-3] Exception processing template "login": An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+Caused by: org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+
+2020-05-14 19:55:27.220 ERROR 6468 --- [http-nio-80-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/login.html]" - line 22, col 25)] with root cause
+
+org.attoparser.ParseException: (Line = 22, Column = 25) Incomplete structure: "<input type="text" class="form-control" id="name" placeholder="请输入账号" style="height: 45px;>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" style="height: 45px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                            style="height: 40px;line-height: 22px;background-color: #0082f0;border: none">登录
+                    </button>
+                </form>
+                <div class="midbody_right">
+                    <a href="##" class="right_a">忘记密码</a>
+                </div>
+            </div>
+            <div class="center">
+                <h3>第三方账号登录</h3>
+            </div>
+            <div class="midbody_bottom">
+                <a href="##">
+                    <i class="user-icon"></i>
+                    <span class="text">github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="go-reg">
+        还没有账号？
+        <a href="##">立即注册</a>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-05-14 20:36:06.691  INFO 6468 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:36:06.701  INFO 6468 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-14 20:36:06.915  INFO 6468 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-14 20:36:07.596  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:36:07.596  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:36:08.011  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:36:08.011  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:36:08.011  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:36:08.041  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:36:08.041  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 441 ms
+2020-05-14 20:36:08.051  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-05-14 20:36:08.061  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-05-14 20:36:08.061  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:36:08.236  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:36:08.261  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:36:08.331  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:36:08.351  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:36:08.351  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.796 seconds (JVM running for 8316.56)
+2020-05-14 20:36:08.351  INFO 6468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:36:10.856  INFO 6468 --- [Thread-20] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:36:10.861  INFO 6468 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-05-14 20:36:11.071  INFO 6468 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-05-14 20:36:11.492  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:36:11.492  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:36:11.891  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:36:11.891  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:36:11.891  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:36:11.911  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:36:11.911  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 395 ms
+2020-05-14 20:36:11.921  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-05-14 20:36:11.921  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-05-14 20:36:11.921  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:36:12.056  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:36:12.071  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:36:12.121  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:36:12.131  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:36:12.131  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.694 seconds (JVM running for 8320.346)
+2020-05-14 20:36:12.131  INFO 6468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:37:19.810  INFO 6468 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:37:19.815  INFO 6468 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-05-14 20:37:20.061  INFO 6468 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-05-14 20:37:21.157  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:37:21.157  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:37:21.563  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:37:21.564  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:37:21.564  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:37:21.584  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:37:21.584  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 419 ms
+2020-05-14 20:37:21.612  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-05-14 20:37:21.626  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2020-05-14 20:37:21.626  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:37:21.826  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:37:21.841  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:37:21.896  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:37:21.906  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:37:21.906  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.8 seconds (JVM running for 8390.115)
+2020-05-14 20:37:21.906  INFO 6468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:40:44.089  INFO 6468 --- [Thread-30] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:40:44.091  INFO 6468 --- [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2020-05-14 20:40:44.351  INFO 6468 --- [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2020-05-14 20:40:44.821  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:40:44.822  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:40:45.187  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:40:45.188  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:40:45.188  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:40:45.203  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:40:45.203  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 379 ms
+2020-05-14 20:40:45.214  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2020-05-14 20:40:45.221  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2020-05-14 20:40:45.221  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:40:45.351  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:40:45.371  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:40:45.416  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:40:45.436  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:40:45.436  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.686 seconds (JVM running for 8593.644)
+2020-05-14 20:40:45.436  INFO 6468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:40:48.991  INFO 6468 --- [Thread-35] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:40:48.996  INFO 6468 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2020-05-14 20:40:49.201  INFO 6468 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2020-05-14 20:40:49.496  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:40:49.496  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:40:49.731  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:40:49.731  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:40:49.731  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:40:49.751  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:40:49.751  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 250 ms
+2020-05-14 20:40:49.763  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2020-05-14 20:40:49.763  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2020-05-14 20:40:49.771  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:40:49.881  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:40:49.891  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:40:49.926  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:40:49.931  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:40:49.931  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.463 seconds (JVM running for 8598.145)
+2020-05-14 20:40:49.931  INFO 6468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:41:19.807  INFO 6468 --- [Thread-40] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:41:19.812  INFO 6468 --- [Thread-40] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2020-05-14 20:41:20.013  INFO 6468 --- [Thread-40] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2020-05-14 20:41:20.611  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 6468 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:41:20.611  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:41:21.081  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:41:21.081  INFO 6468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:41:21.081  INFO 6468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:41:21.106  INFO 6468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:41:21.106  INFO 6468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 485 ms
+2020-05-14 20:41:21.116  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2020-05-14 20:41:21.121  INFO 6468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2020-05-14 20:41:21.121  INFO 6468 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:41:21.281  INFO 6468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:41:21.296  INFO 6468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:41:21.371  INFO 6468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:41:21.386  INFO 6468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:41:21.391  INFO 6468 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.971 seconds (JVM running for 8629.598)
+2020-05-14 20:41:21.391  INFO 6468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:41:39.708  INFO 11460 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 11460 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:41:39.752  INFO 11460 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:41:39.903  INFO 11460 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:41:39.904  INFO 11460 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:41:41.221  INFO 11460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:41:41.236  INFO 11460 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:41:41.236  INFO 11460 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:41:41.351  INFO 11460 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:41:41.351  INFO 11460 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1447 ms
+2020-05-14 20:41:41.396  INFO 11460 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:41:41.701  INFO 11460 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:41:41.710  INFO 11460 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:41:42.730  INFO 11460 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:41:42.820  INFO 11460 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:41:43.002  INFO 11460 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:41:43.062  INFO 11460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:41:43.070  INFO 11460 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.862 seconds (JVM running for 4.967)
+2020-05-14 20:42:18.142  INFO 11460 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 20:42:18.143  INFO 11460 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 20:42:18.152  INFO 11460 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-05-14 20:42:21.273  WARN 11460 --- [http-nio-80-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'name' for method parameter of type String]
+2020-05-14 20:42:41.013  WARN 11460 --- [http-nio-80-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'name' for method parameter of type String]
+2020-05-14 20:44:18.546  INFO 10872 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10872 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:44:18.565  INFO 10872 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:44:18.682  INFO 10872 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:44:18.685  INFO 10872 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:44:20.266  INFO 10872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:44:20.276  INFO 10872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:44:20.276  INFO 10872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:44:20.391  INFO 10872 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:44:20.391  INFO 10872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1706 ms
+2020-05-14 20:44:20.421  INFO 10872 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:44:20.556  INFO 10872 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:44:20.560  INFO 10872 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:44:21.140  INFO 10872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:44:21.192  INFO 10872 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:44:21.301  INFO 10872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:44:21.335  INFO 10872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:44:21.340  INFO 10872 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.291 seconds (JVM running for 4.21)
+2020-05-14 20:44:22.801  INFO 10872 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:44:22.801  INFO 10872 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-14 20:44:23.006  INFO 10872 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-14 20:44:23.331  INFO 10872 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10872 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:44:23.331  INFO 10872 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:44:23.631  INFO 10872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:44:23.636  INFO 10872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:44:23.636  INFO 10872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:44:23.661  INFO 10872 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:44:23.661  INFO 10872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 330 ms
+2020-05-14 20:44:23.681  INFO 10872 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-05-14 20:44:23.691  INFO 10872 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-05-14 20:44:23.691  INFO 10872 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:44:23.898  INFO 10872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:44:23.918  INFO 10872 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:44:24.039  INFO 10872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:44:24.060  INFO 10872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:44:24.060  INFO 10872 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.759 seconds (JVM running for 6.932)
+2020-05-14 20:44:24.065  INFO 10872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 20:44:28.256  INFO 10872 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 20:44:28.257  INFO 10872 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 20:44:28.276  INFO 10872 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2020-05-14 20:44:30.319  WARN 10872 --- [http-nio-80-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:45:10.344  INFO 7116 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 7116 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:45:10.354  INFO 7116 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:45:10.497  INFO 7116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:45:10.497  INFO 7116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:45:11.646  INFO 7116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:45:11.650  INFO 7116 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:45:11.650  INFO 7116 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:45:11.731  INFO 7116 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:45:11.731  INFO 7116 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1224 ms
+2020-05-14 20:45:11.761  INFO 7116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:45:11.872  INFO 7116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:45:11.881  INFO 7116 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:45:12.351  INFO 7116 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:45:12.411  INFO 7116 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:45:12.521  INFO 7116 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:45:12.556  INFO 7116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:45:12.556  INFO 7116 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 2.719 seconds (JVM running for 3.672)
+2020-05-14 20:45:17.650  INFO 7116 --- [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 20:45:17.650  INFO 7116 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 20:45:17.662  INFO 7116 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-05-14 20:45:19.394  WARN 7116 --- [http-nio-80-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:47:32.311  INFO 9652 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 9652 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:47:32.344  INFO 9652 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:47:32.431  INFO 9652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:47:32.441  INFO 9652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:47:34.296  INFO 9652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:47:34.316  INFO 9652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:47:34.316  INFO 9652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:47:34.430  INFO 9652 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:47:34.431  INFO 9652 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1990 ms
+2020-05-14 20:47:34.479  INFO 9652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:47:34.635  INFO 9652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:47:34.645  INFO 9652 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:47:35.264  INFO 9652 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:47:35.323  INFO 9652 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:47:35.511  INFO 9652 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:47:35.564  INFO 9652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:47:35.568  INFO 9652 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 3.867 seconds (JVM running for 4.935)
+2020-05-14 20:47:44.899  INFO 9652 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 20:47:44.899  INFO 9652 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 20:47:44.907  INFO 9652 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-05-14 20:47:48.532  WARN 9652 --- [http-nio-80-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:49:17.346  INFO 712 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 712 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:49:17.361  INFO 712 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:49:17.449  INFO 712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:49:17.450  INFO 712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:49:19.254  INFO 712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:49:19.271  INFO 712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:49:19.272  INFO 712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:49:19.405  INFO 712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:49:19.406  INFO 712 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1956 ms
+2020-05-14 20:49:19.443  INFO 712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:49:19.661  INFO 712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:49:19.666  INFO 712 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:49:20.766  INFO 712 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:49:20.836  INFO 712 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:49:20.970  INFO 712 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:49:21.022  INFO 712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:49:21.026  INFO 712 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 4.34 seconds (JVM running for 5.502)
+2020-05-14 20:49:28.023  INFO 712 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 20:49:28.024  INFO 712 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 20:49:28.034  INFO 712 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-05-14 20:49:28.105 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 20:49:28.124 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 20:49:28.145 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 20:49:28.149 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 20:49:28.152 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 20:49:28.160 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 20:49:28.161 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:49:28.163 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:49:28.167 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:49:28.187 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:49:28.188 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:49:28.189 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:49:28.191 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:49:28.191 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:49:28.193 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:49:28.193 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:49:28.193 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:49:28.194 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:49:28.195 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:49:28.195 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:49:28.195 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:16.390 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 20:51:16.390 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 20:51:16.391 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 20:51:16.391 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 20:51:16.392 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 20:51:16.394 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 20:51:16.395 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:16.395 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:16.396 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:16.396 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:16.397 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:16.397 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:16.399 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:16.399 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:16.400 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:16.406 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:16.406 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:16.406 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:16.407 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:16.407 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:16.407 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:17.098 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 20:51:17.099 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 20:51:17.099 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 20:51:17.100 DEBUG 712 --- [http-nio-80-exec-9] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 20:51:17.100 DEBUG 712 --- [http-nio-80-exec-9] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 20:51:17.102 DEBUG 712 --- [http-nio-80-exec-9] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 20:51:17.103 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:17.103 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:17.104 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:17.104 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:17.104 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:17.105 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:17.105 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:17.105 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:17.106 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:17.106 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:17.106 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:17.107 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:17.108 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:51:17.110 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:51:17.112 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:51:23.927  WARN 712 --- [http-nio-80-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:52:54.029 DEBUG 712 --- [http-nio-80-exec-8] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ACCOUNT_ID = ? ) 
+2020-05-14 20:52:54.031 DEBUG 712 --- [http-nio-80-exec-8] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 57124383(String)
+2020-05-14 20:52:54.037 DEBUG 712 --- [http-nio-80-exec-8] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:54.048 DEBUG 712 --- [http-nio-80-exec-8] c.c.b.b.m.U.updateByExampleSelective     : ==>  Preparing: update USER SET NAME = ?, TOKEN = ?, GMT_MODIFIED = ?, AVATAR_URL = ? WHERE ( ID = ? ) 
+2020-05-14 20:52:54.050 DEBUG 712 --- [http-nio-80-exec-8] c.c.b.b.m.U.updateByExampleSelective     : ==> Parameters: city(String), 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String), 1589460774039(Long), https://avatars1.githubusercontent.com/u/57124383?v=4(String), 1(Integer)
+2020-05-14 20:52:54.060 DEBUG 712 --- [http-nio-80-exec-8] c.c.b.b.m.U.updateByExampleSelective     : <==    Updates: 1
+2020-05-14 20:52:54.075 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:54.075 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:54.076 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:54.077 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 20:52:54.077 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 20:52:54.077 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 20:52:54.077 DEBUG 712 --- [http-nio-80-exec-3] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 20:52:54.077 DEBUG 712 --- [http-nio-80-exec-3] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 20:52:54.080 DEBUG 712 --- [http-nio-80-exec-3] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 20:52:54.080 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.080 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.080 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.083 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.083 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.083 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.084 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.084 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.084 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.084 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.084 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.085 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.085 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.085 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.085 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.087 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.N.selectByExample              : ==>  Preparing: select ID, NOTIFIER, RECEIVER, OUTERID, TYPE, GMT_CREATE, STATUS from NOTIFICATION WHERE ( RECEIVER = ? ) 
+2020-05-14 20:52:54.087 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.N.selectByExample              : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.088 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.N.selectByExample              : <==      Total: 2
+2020-05-14 20:52:54.088 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.089 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.089 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.090 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.Q.selectByPrimaryKey           : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
+2020-05-14 20:52:54.090 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.Q.selectByPrimaryKey           : ==> Parameters: 36(Integer)
+2020-05-14 20:52:54.091 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.Q.selectByPrimaryKey           : <==      Total: 1
+2020-05-14 20:52:54.092 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:54.092 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:54.092 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:54.093 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.C.selectByPrimaryKey           : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, CONTENT, GMT_CREATE, LIKE_COUNT, COMMENT_COUNT from COMMENT where ID = ? 
+2020-05-14 20:52:54.093 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.C.selectByPrimaryKey           : ==> Parameters: 33(Integer)
+2020-05-14 20:52:54.094 DEBUG 712 --- [http-nio-80-exec-3] c.c.b.b.m.C.selectByPrimaryKey           : <==      Total: 1
+2020-05-14 20:52:54.125 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:54.125 DEBUG 712 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:54.125 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:54.125 DEBUG 712 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:54.126 DEBUG 712 --- [http-nio-80-exec-9] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:54.126 DEBUG 712 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:54.133 DEBUG 712 --- [http-nio-80-exec-6] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:54.134 DEBUG 712 --- [http-nio-80-exec-6] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:54.135 DEBUG 712 --- [http-nio-80-exec-6] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:54.139 DEBUG 712 --- [http-nio-80-exec-7] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:54.140 DEBUG 712 --- [http-nio-80-exec-7] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:54.141 DEBUG 712 --- [http-nio-80-exec-7] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:54.180 DEBUG 712 --- [http-nio-80-exec-4] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:54.180 DEBUG 712 --- [http-nio-80-exec-4] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:54.181 DEBUG 712 --- [http-nio-80-exec-4] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:56.966 DEBUG 712 --- [http-nio-80-exec-2] c.c.b.b.m.UserMapper.selectByExample     : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-05-14 20:52:56.967 DEBUG 712 --- [http-nio-80-exec-2] c.c.b.b.m.UserMapper.selectByExample     : ==> Parameters: 4f3ba5f6-218d-4dc9-8fc9-b53eed62e9db(String)
+2020-05-14 20:52:56.968 DEBUG 712 --- [http-nio-80-exec-2] c.c.b.b.m.UserMapper.selectByExample     : <==      Total: 1
+2020-05-14 20:52:56.976 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 20:52:56.976 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 20:52:56.976 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 20:52:56.977 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 20:52:56.977 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 20:52:56.978 DEBUG 712 --- [http-nio-80-exec-1] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 20:52:56.978 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:56.978 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:56.978 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:56.978 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:56.978 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:56.979 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:56.979 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:56.979 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:56.979 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:56.979 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:56.980 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:56.980 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:52:56.980 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:52:56.980 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:52:56.981 DEBUG 712 --- [http-nio-80-exec-1] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:53:23.357  WARN 712 --- [http-nio-80-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:53:58.756  WARN 712 --- [http-nio-80-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:54:15.559  WARN 712 --- [http-nio-80-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:54:57.641  WARN 712 --- [http-nio-80-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:55:05.940  WARN 712 --- [http-nio-80-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'name' is not present]
+2020-05-14 20:56:24.656  INFO 13060 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 13060 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:56:24.677  INFO 13060 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:56:24.778  INFO 13060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:56:24.778  INFO 13060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:56:26.770  INFO 13060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:56:26.779  INFO 13060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:56:26.780  INFO 13060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:56:26.878  INFO 13060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:56:26.878  INFO 13060 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2100 ms
+2020-05-14 20:56:26.941  INFO 13060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:56:27.155  INFO 13060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:56:27.162  INFO 13060 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:56:28.187  INFO 13060 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:56:28.263  INFO 13060 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:56:28.435  INFO 13060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:56:28.479  INFO 13060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:56:28.482  INFO 13060 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 4.322 seconds (JVM running for 6.027)
+2020-05-14 20:57:56.296  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10288 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:57:56.306  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:57:56.355  INFO 10288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-14 20:57:56.355  INFO 10288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-14 20:57:58.856  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:57:58.866  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:57:58.866  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:57:58.968  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:57:58.968  INFO 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2613 ms
+2020-05-14 20:57:59.027  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-14 20:57:59.235  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-14 20:57:59.241  INFO 10288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:58:00.114  INFO 10288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:58:00.212  INFO 10288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:58:00.642  INFO 10288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:58:00.933  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:58:00.942  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 5.189 seconds (JVM running for 7.068)
+2020-05-14 20:58:07.237  INFO 10288 --- [http-nio-80-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-14 20:58:07.238  INFO 10288 --- [http-nio-80-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-14 20:58:07.248  INFO 10288 --- [http-nio-80-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-14 20:58:09.689 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.QuestionMapper.countByExample  : ==>  Preparing: select count(*) from QUESTION 
+2020-05-14 20:58:09.708 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.QuestionMapper.countByExample  : ==> Parameters: 
+2020-05-14 20:58:09.723 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.QuestionMapper.countByExample  : <==      Total: 1
+2020-05-14 20:58:09.725 DEBUG 10288 --- [http-nio-80-exec-10] .Q.selectByExampleWithBLOBsWithRowbounds : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION order by gmt_create desc 
+2020-05-14 20:58:09.727 DEBUG 10288 --- [http-nio-80-exec-10] .Q.selectByExampleWithBLOBsWithRowbounds : ==> Parameters: 
+2020-05-14 20:58:09.734 DEBUG 10288 --- [http-nio-80-exec-10] .Q.selectByExampleWithBLOBsWithRowbounds : <==      Total: 5
+2020-05-14 20:58:09.735 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:58:09.737 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:58:09.738 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:58:09.744 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:58:09.744 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:58:09.745 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:58:09.746 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:58:09.746 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:58:09.746 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:58:09.747 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:58:09.747 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:58:09.749 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:58:09.749 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2020-05-14 20:58:09.750 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : ==> Parameters: 1(Integer)
+2020-05-14 20:58:09.750 DEBUG 10288 --- [http-nio-80-exec-10] c.c.b.b.m.UserMapper.selectByPrimaryKey  : <==      Total: 1
+2020-05-14 20:59:47.128  INFO 10288 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:59:47.128  INFO 10288 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-14 20:59:47.331  INFO 10288 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-14 20:59:47.765  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10288 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 20:59:47.765  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 20:59:48.109  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 20:59:48.109  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 20:59:48.109  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 20:59:48.140  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 20:59:48.140  INFO 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 375 ms
+2020-05-14 20:59:48.156  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-05-14 20:59:48.156  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-05-14 20:59:48.156  INFO 10288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 20:59:48.297  INFO 10288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 20:59:48.312  INFO 10288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 20:59:48.390  INFO 10288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 20:59:48.390  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 20:59:48.390  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.661 seconds (JVM running for 114.528)
+2020-05-14 20:59:48.390  INFO 10288 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 21:01:13.704  INFO 10288 --- [Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 21:01:13.704  INFO 10288 --- [Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-05-14 21:01:13.922  INFO 10288 --- [Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-05-14 21:01:14.433  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10288 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 21:01:14.433  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 21:01:14.808  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 21:01:14.808  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 21:01:14.808  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 21:01:14.839  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 21:01:14.839  INFO 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 406 ms
+2020-05-14 21:01:14.854  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-05-14 21:01:14.854  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-05-14 21:01:14.854  INFO 10288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 21:01:15.104  INFO 10288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 21:01:15.120  INFO 10288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 21:01:15.198  INFO 10288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 21:01:15.214  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 21:01:15.214  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.834 seconds (JVM running for 201.348)
+2020-05-14 21:01:15.214  INFO 10288 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 21:01:16.680  INFO 10288 --- [Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 21:01:16.681  INFO 10288 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-05-14 21:01:16.891  INFO 10288 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-05-14 21:01:17.270  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10288 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 21:01:17.270  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 21:01:17.661  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 21:01:17.661  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 21:01:17.661  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 21:01:17.692  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 21:01:17.692  INFO 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 422 ms
+2020-05-14 21:01:17.708  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-05-14 21:01:17.723  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2020-05-14 21:01:17.723  INFO 10288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 21:01:17.864  INFO 10288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 21:01:17.880  INFO 10288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 21:01:17.942  INFO 10288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 21:01:17.958  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 21:01:17.958  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.709 seconds (JVM running for 204.085)
+2020-05-14 21:01:17.958  INFO 10288 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-14 21:03:04.591  INFO 10288 --- [Thread-32] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-14 21:03:04.607  INFO 10288 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2020-05-14 21:03:04.810  INFO 10288 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2020-05-14 21:03:05.154  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Starting BlogApplication on Cheng with PID 10288 (started by Cheng in E:\Sophomore\j2EE\SpringBoot博客项目实战\cityBlog\blog)
+2020-05-14 21:03:05.154  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-05-14 21:03:05.560  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-14 21:03:05.560  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-14 21:03:05.560  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-14 21:03:05.576  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-14 21:03:05.576  INFO 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 422 ms
+2020-05-14 21:03:05.616  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2020-05-14 21:03:05.622  INFO 10288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2020-05-14 21:03:05.622  INFO 10288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/blogdata'
+2020-05-14 21:03:05.778  INFO 10288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-14 21:03:05.794  INFO 10288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-14 21:03:05.841  INFO 10288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-14 21:03:05.872  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-14 21:03:05.872  INFO 10288 --- [restartedMain] com.city.blog.blog.BlogApplication       : Started BlogApplication in 0.738 seconds (JVM running for 312.0)
+2020-05-14 21:03:05.872  INFO 10288 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

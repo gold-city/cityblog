@@ -18,7 +18,8 @@
                 <a class="navbar-brand" href="/" style="color: #f5f6fa;">City Blog</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <form class="navbar-form navbar-left" style="margin-left: 100px;" action="/question/select" method="post">
+                <form class="navbar-form navbar-left" style="margin-left: 100px;" action="/question/select"
+                      method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="找社区文章、答案、技术大拿"
                                style="font-size: 12px;width: 200px;" name="select">
@@ -27,22 +28,24 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li th:if="${session.user}==null"><a
-                            href="https://github.com/login/oauth/authorize?client_id=853b30b562f5685f5390&redirect_uri=http://localhost/callback&scope=user&state=1"
+                            href="/goLogin"
                             style="color: #f5f6fa">登录</a></li>
                     <li><a href="/publish" th:if="${session.user}!=null" style="color: #f5f6fa;">发布</a></li>
 
 
-
                     <!--通知-->
-                    <li><a href="/profile/replies" th:if="${session.user}!=null" style="color: #f5f6fa;">通知<span style="margin-left: 8px;margin-top:-3px; background-color:#00bcd4;" class="badge" th:text="${noticeSize}"></span></a></li>
+                    <li><a href="/profile/replies" th:if="${session.user}!=null" style="color: #f5f6fa;">通知<span
+                            style="margin-left: 8px;margin-top:-3px; background-color:#00bcd4;" class="badge"
+                            th:text="${noticeSize}"></span></a></li>
 
 
-
-                    <li th:if="${session.user}!=null"><img width="40px" height="40px" style="border-radius: 6px;margin-left: 18px;margin-top: 5px"
+                    <li th:if="${session.user}!=null"><img width="40px" height="40px"
+                                                           style="border-radius: 6px;margin-left: 18px;margin-top: 5px"
                                                            th:src="${session.user.getAvatarUrl()}"/></li>
                     <li class="dropdown" th:if="${session.user}!=null">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false" style=" padding-left:8px;color: #f5f6fa;background-color: #373d41"><span
+                           aria-expanded="false"
+                           style=" padding-left:8px;color: #f5f6fa;background-color: #373d41"><span
                                 th:text="${session.user.getName()}"></span>&ensp;<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/profile/questions">我的</a></li>
