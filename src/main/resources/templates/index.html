@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>City Blog</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
     <!--自己写的css放他后面-->
     <!--格式话代码ctrl+alt+l-->
     <!--页面渲染之后再加载js-->
@@ -23,13 +24,95 @@
         }
     </script>
 </head>
-<body style="background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) no-repeat fixed;">
+<body style="background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%) no-repeat fixed;">
 <div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid"
      style="background-color: #ffffff;padding-bottom: 20px;margin: 0 150px 40px 150px;border-radius: 3px;">
     <div class="row">
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" style="border-right: 1px solid #8c8c8c;">
-            <div style="width: 100%;height: 60px; margin-bottom: 20px; border-bottom: 1px solid #0f0f0f;"><h2><span
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="border-right: 1px solid #dddddd;">
+            <div style="margin-top: 20px;border-bottom: 1px solid #dddddd;padding-bottom: 10px">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox" style="border-radius: 10px">
+                        <div class="item active">
+                            <img src="/image/1.png">
+                            <div class="carousel-caption">
+                                让数据说话的人
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/image/2.jpg">
+                            <div class="carousel-caption">
+                                调查了 17,000 多位程序员，当前的云原生开发现状究竟如何？
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/image/3.jpg">
+                            <div class="carousel-caption">
+                                区块链必读“上链”哲学：“胖链下”与“瘦链上”
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/image/4.jpg">
+                            <div class="carousel-caption">
+                                iRobot的30年成长史
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/image/5.jpg">
+                            <div class="carousel-caption">
+                                阿里云自研数据仓库 AnalyticDB 再捧 TPC 全球冠军
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div style="padding:10px 0px;border-bottom:  1px solid #dddddd;">
+                <div id="tab-nav">
+                    <div id="tab-nav-fix">
+                        <div class="right-icon">
+                            <img src="/image/cityblogguanggao.png" width="100px" height="100px">
+                        </div>
+                        <ul>
+                            <li class="active">推荐阅读</li>
+                            <li>云计算</li>
+                            <li>大数据</li>
+                            <li>人工智能</li>
+                            <li>通用技术</li>
+                            <li>开发语言</li>
+                            <li>阿里技术</li>
+                            <li>前端开发</li>
+                            <li>数据库</li>
+                            <li>移动开发</li>
+                            <li>安全</li>
+                            <li>建站</li>
+                            <li>物联网</li>
+                            <li>架构设计</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div style="width: 100%;height: 60px; margin-bottom: 20px; border-bottom: 1px solid #dddddd;"><h2><span
                     class="glyphicon glyphicon-list" aria-hidden="true"></span>&ensp;发现</h2></div>
             <div class="media" th:each="question:${paginationDTO.questions}">
                 <div class="media-left media-middle">
@@ -75,14 +158,260 @@
                 </ul>
             </nav>
         </div>
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <br/><br/><br/>
-            <h2>热门话题</h2>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" style="background-color: #f9f9f9">
             <br/>
-            xxxxxxxx<br/>
-            xxxxxxxx<br/>
+            <div id="operate-box">
+                <div class="operate-item" style="border-right: 1px solid #f0f0f0">
+                    <img src="/image/02.png" class="normal">
+                    <img src="/image/03.png" class="hide">
+                    <p>签到测运势</p>
+                </div>
+                <div class="operate-item">
+                    <img src="/image/04.png" class="normal">
+                    <img src="/image/05.png" class="hide">
+                    <p>写文章</p>
+                </div>
+                <div class="operate-item" style="border-right: 1px solid #f0f0f0">
+                    <img src="/image/06.png" class="normal">
+                    <img src="/image/07.png" class="hide">
+                    <p>专家加盟</p>
+                </div>
+                <div class="operate-item">
+                    <img src="/image/08.png" class="normal">
+                    <img src="/image/09.png" class="hide">
+                    <p>抽奖</p>
+                </div>
+                <div class="operate-item" style="border-right: 1px solid #f0f0f0">
+                    <img src="/image/10.png" class="normal">
+                    <img src="/image/11.png" class="hide">
+                    <p>任务</p>
+                </div>
+                <div class="operate-item">
+                    <img src="/image/12.png" class="normal">
+                    <img src="/image/13.png" class="hide">
+                    <p>礼物</p>
+                </div>
+            </div>
+            <div class="prize-list" style="border: 1px solid #f0f0f0;margin-bottom: 20px">
+                <div class="prize-swiper-container">
+                    <div class="swiper-slide">
+                        <img src="/image/14.png">
+                        <span>1214441058843145</span>
+                        <span>在积分商城获得了</span>
+                        <span class="prize-color">无线鼠标</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/image/15.png">
+                        <span>1944625705964605</span>
+                        <span>做任务获得了</span>
+                        <span class="prize-color">2 积分</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/image/14.png">
+                        <span>creything</span>
+                        <span>抽奖获得了</span>
+                        <span class="prize-color">福禄寿公仔</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fast-enter" style="border: 1px solid #f0f0f0">
+                <h3>更多频道</h3>
+                <ul>
+                    <li>云头条</li>
+                    <li>下载</li>
+                    <li>专题</li>
+                    <li>码上公益</li>
+
+                </ul>
+            </div>
+            <div class="fast-enter">
+                <h3>合作专区</h3>
+                <ul>
+                    <li>开发者中心</li>
+                    <li>阿里小程序云</li>
+                    <li>支付宝开发者社区</li>
+                    <li>加入云大使</li>
+                    <li>IoT开发者社区</li>
+                    <li>语雀云端知识库</li>
+                </ul>
+            </div>
+            <div class="activity-box">
+                <h3>活动消息</h3>
+                <div class="activity-info">
+                    <!--          -->
+                    <ul class="layui-timeline">
+                        <li class="layui-timeline-item">
+                            <div class="relative">
+                                <span class="time-first">14:00</span>
+                            </div>
+                            <i class="layui-icon layui-timeline-axis circle"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2020.05.16</h3>
+                                <p>
+                                    疫情下零售行业上云经验（第二期）
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <div class="relative">
+                                <span class="time-first">15:00</span>
+                            </div>
+                            <i class="layui-icon layui-timeline-axis circle"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <!--                        <h3 class="layui-timeline-title">2020.05.16</h3>-->
+                                <p>
+                                    云分期“春雷计划”——百万代金券等你来！
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <div class="relative">
+                                <span class="time-first">16:00</span>
+                            </div>
+                            <i class="layui-icon layui-timeline-axis circle"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <!--                        <h3 class="layui-timeline-title">8月16日</h3>-->
+                                <p>如何让你的网站更好的被搜索引擎抓取</p>
+
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <div class="relative">
+                                <span class="time-first">10:40</span>
+                            </div>
+                            <i class="layui-icon layui-timeline-axis circle"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2020.05.19</h3>
+                                <p>
+                                    高质量专利培育与商业价值实现
+                                </p>
+                            </div>
+
+
+                        </li>
+                        <li class="layui-timeline-item">
+                            <div class="relative">
+                                <span class="time-first">15:00</span>
+                            </div>
+                            <i class="layui-icon layui-timeline-axis circle"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <!--                        <h3 class="layui-timeline-title">2020.05.16</h3>-->
+                                <p>
+                                    新手云大使系列入门课程 第三节如何获取返利
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="notice-box">
+                <h3>社区公告
+                    <a href="##">更多 ></a></h3>
+                <ul>
+                    <li><span></span>Hello社区知识产权保护暨版权授权与侵权投诉指引【2019版】</li>
+                    <li><span></span>Hello社区经验值及会员积分规则【2020版】</li>
+                    <li><span></span>Hello社区长期招募技术讲师！Hello直播，钉群直播，技术沙龙长期招募各个技术方向的讲师！</li>
+                    <li><span></span>Hello社区专家直播招募，开放直播权限！</li>
+                </ul>
+                <div class="contact">
+                    <div class="c-item">
+                        <svg class="icon"
+                             style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2606">
+                            <path d="M912.8 64H111.2C85.2 64 64 85.6 64 111.9V936c0 17.8 18.4 29.4 34.1 21.4l154.5-78.5h660.2c25.9 0 47.2-21.6 47.2-47.9V112c0-26.4-21.2-48-47.2-48z m0 743c0 13.2-10.6 24-23.6 24H252.6l-141.5 71.9v-767c0-13.2 10.6-24 23.6-24h754.5c13 0 23.6 10.8 23.6 24V807z"
+                                  fill="#000000" p-id="2607"></path>
+                            <path d="M659.7 225.8c-18.4-18.4-49.5-17.2-69.5 2.8l-307 307-6.9 173.7 173.7-6.9 307.1-307.1c20-20 21.2-51.1 2.8-69.5l-100.2-100zM432.2 653.3l-105.3 5.3 5.3-105.3 27.4-27.4 100 100-27.4 27.4z m60.8-60.7l-100-100 133.4-133.4 100 100L493 592.6z m215.6-215.7l-49 49-100-100 49-49c10.2-10.2 25.9-11 35.1-1.8l66.7 66.7c9.2 9.2 8.4 24.9-1.8 35.1z"
+                                  fill="#000000" p-id="2608"></path>
+                        </svg>
+                        投诉建议
+                    </div>
+                    <div class="c-item">
+                        <svg class="icon"
+                             style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2576">
+                            <path d="M64.095295 64.025199l0 703.540408 895.472741 0L959.568037 64.025199 64.095295 64.025199zM895.442554 703.636598 127.833969 703.636598 127.833969 285.241486l383.985418 291.056935 0.014326-0.014326 0.014326 0.014326 383.594515-290.669102L895.442554 703.636598zM511.831666 486.699778 127.819642 195.615213l0.013303-67.781756 767.608585 0 0 68.181869L511.831666 486.699778z"
+                                  p-id="2577"></path>
+                        </svg>
+                        联系我们
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-box">
+                <h3>订阅广场
+                    <a href="##">查看全部 ></a></h3>
+                <ul>
+                    <li>
+                        <div class="srb-img">
+                            <img src="/image/16.jpeg" alt="">
+                        </div>
+                        <div class="srb-info">
+
+                            <h6><a>阿里云新品发布·周刊</a></h6>
+                            <p>OSS跨同城3AZ重磅发布，构造全面数据保护体系</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="srb-img">
+                            <img src="/image/17.png" alt="">
+                        </div>
+                        <div class="srb-info">
+
+                            <h6><a>PostgreSQL技术周刊</a></h6>
+                            <p>应用开发者指南</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="srb-img">
+                            <img src="/image/18.png" alt="">
+                        </div>
+                        <div class="srb-info">
+
+                            <h6><a>阿里云 MaxCompute 月刊</a></h6>
+                            <p></p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="srb-img">
+                            <img src="/image/19.jpg" alt="">
+                        </div>
+                        <div class="srb-info">
+
+                            <h6><a>云周刊</a></h6>
+                            <p>从遇见到信任 | Apache Dubbo 的毕业之旅</p>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="partner-list">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a>阿里云天池平台</a></li>
+                    <li><a>阿里技术协会</a></li>
+                    <li><a>阿里研究院</a></li>
+                    <li><a>博文视点</a></li>
+                    <li><a>MySQL官方社区</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $("#operate-box .operate-item").hover(function(){
+            var index = $("#operate-box .operate-item").index(this);
+            $("#operate-box .operate-item img.hide").eq(index).css("display","block");
+            $("#operate-box .operate-item img.normal").eq(index).css("display","none");
+            $("#operate-box .operate-item p").eq(index).css("color","#36f")
+        },function(){
+            $("#operate-box .operate-item img.normal").css("display","block");
+            $("#operate-box .operate-item img.hide").css("display","none");
+            $("#operate-box .operate-item p").css("color","#333")
+        })
+    })
+</script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 package com.city.blog.blog.interceptor;
 
+import com.city.blog.blog.mapper.BlogUserMapper;
 import com.city.blog.blog.mapper.UserMapper;
+import com.city.blog.blog.model.BlogUser;
+import com.city.blog.blog.model.BlogUserExample;
 import com.city.blog.blog.model.User;
 import com.city.blog.blog.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +29,8 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private BlogUserMapper blogUserMapper;
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
 
@@ -43,6 +48,12 @@ public class SessionInterceptor implements HandlerInterceptor {
                     List<User> users = userMapper.selectByExample(userExample);
                     if (users.size() != 0) {
                         request.getSession().setAttribute("user", users.get(0));
+                    }
+                    BlogUserExample userExample2 = new BlogUserExample();
+                    userExample2.createCriteria().andTokenEqualTo(userToken);
+                    List<BlogUser> users2 = blogUserMapper.selectByExample(userExample2);
+                    if (users2.size() != 0) {
+                        request.getSession().setAttribute("user", users2.get(0));
                     }
                     break;
                 }

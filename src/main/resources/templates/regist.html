@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    <script>
+       $(function() {
+           var message = "[[${message}]]";
+           if (message != null&&message!="") {
+               alert(message);
+           }
+       });
+    </script>
+</head>
+<body class="flex vertical xcenter ycenter acc-body">
+<div th:if="${message!=null}"></div>
+<div class="acc-main">
+    <div class="acc-hd">
+        <a href="/"><h1 class="fleft acc-title">cityblog</h1></a>
+        <div class="fright hd-r">
+            已有账号？<a href="/goLogin">立即登录</a>
+            <span class="v-line hide-xs">|</span>
+            <a href="/" class="hide-xs">返回首页</a>
+        </div>
+    </div>
+    <div class="acc-box">
+        <div class="acc-form">
+            <form action="/regist" method="post">
+                <div class="flex ycenter text-box">
+                    <input type="text" name="name" placeholder="请输入用户名"
+                           class="flexone form-text">
+                </div>
+                <div class="flex ycenter text-box">
+                    <input type="password" name="password" placeholder="请输入密码"
+                           class="flexone form-text">
+                </div>
+                <input type="submit" value="注册" class="form-btn disabled">
+            </form>
+        </div>
+        <div class="center">
+            <h3>第三方账号注册</h3>
+        </div>
+        <div class="midbody_bottom">
+            <a href="https://github.com/login/oauth/authorize?client_id=853b30b562f5685f5390&redirect_uri=http://localhost/callback&scope=user&state=1">
+                <i class="user-icon"></i>
+                <span class="text">github</span>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
